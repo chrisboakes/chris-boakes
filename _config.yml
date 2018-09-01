@@ -1,0 +1,23 @@
+title: Chris Boakes
+email: chris@chrisboakes.com
+description: > # this means to ignore newlines until "baseurl:"
+  The description of my website
+baseurl: "" # the subpath of your site, e.g. /blog
+
+# Build settings
+markdown: kramdown
+source: src
+destination: public
+
+# Links
+permalink: /:categories/:title/
+collections:
+    category:
+        output: true
+defaults:
+  -
+    scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"

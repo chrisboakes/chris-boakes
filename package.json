@@ -1,0 +1,62 @@
+{
+    "name": "Chris Boakes",
+    "version": "1.0.0",
+    "description": "",
+    "devDependencies": {
+        "babel-eslint": "^8.2.1",
+        "babel-jest": "^22.2.2",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-preset-latest": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "eslint": "^4.17.0",
+        "eslint-config-standard": "^11.0.0-beta.0",
+        "eslint-loader": "^1.9.0",
+        "eslint-plugin-html": "^4.0.2",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-jest": "^21.9.0",
+        "eslint-plugin-node": "^6.0.0",
+        "eslint-plugin-promise": "^3.6.0",
+        "eslint-plugin-standard": "^3.0.1",
+        "import-glob-loader": "^1.1.0",
+        "jest": "^22.2.2",
+        "jest-serializer-vue": "^0.3.0",
+        "laravel-mix": "2.0.0",
+        "lost": "^8.2.0",
+        "postcss-encode-background-svgs": "^1.0.0",
+        "vue-jest": "^2.1.0",
+        "vue-test-utils": "^1.0.0-beta.11",
+        "webpack-svgstore-plugin": "^4.0.1"
+    },
+    "scripts": {
+        "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && jekyll build",
+        "hot": "NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && jekyll build",
+        "devserver": "NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "test-watch": "jest --watch",
+        "jekyll:stop": "kill $(ps aux | grep '[j]ekyll' | awk '{print $2}')",
+        "jekyll:serve": "jekyll serve --livereload",
+        "test": "jest --coverage --verbose src/_js/__tests__ && eslint *.js",
+        "webpack:watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js &",
+        "watch": "yarn run webpack:watch & yarn run jekyll:serve &"
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "js",
+            "json",
+            "vue"
+        ],
+        "transform": {
+            "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+            ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+        },
+        "moduleNameMapper": {
+            "^@/(.*)$": "<rootDir>/src/$1"
+        },
+        "snapshotSerializers": [
+            "<rootDir>/node_modules/jest-serializer-vue"
+        ],
+        "mapCoverage": true
+    },
+    "author": "Chris Boakes",
+    "license": "ISC"
+}
