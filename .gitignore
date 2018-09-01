@@ -1,0 +1,14 @@
+/public/*
+mix.*.js
+mix.js
+mix-manifest.json
+/coverage
+.vagrant
+/node_modules
+.DS_Store
+__MACOSX/
+*.sql
+*.zip
+/src/assets/*
+!/src/assets/.gitkeep
+!/public/.gitkeep
