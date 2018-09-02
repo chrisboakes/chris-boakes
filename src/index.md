@@ -13,10 +13,3 @@ slug: home
         </li>
     {% endfor %}
 </ul>
-
-<h3>Categories</h3>
-<ul>
-    {% for category in site.categories %}
-        <li><a href="category/{{ category[0] | downcase}}">{{ category[0] }}</a></li>
-    {% endfor %}
-</ul>
