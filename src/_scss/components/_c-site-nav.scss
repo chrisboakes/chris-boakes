@@ -1,0 +1,8 @@
+.c-site-nav {
+    display: flex;
+    flex-direction: row;
+
+    &__item {
+        margin-right: 1rem;
+    }
+}
