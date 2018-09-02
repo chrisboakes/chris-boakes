@@ -10,7 +10,7 @@ source: src
 destination: public
 
 # Links
-permalink: /:categories/:title/
+permalink: /:title/
 collections:
     category:
         output: true
