@@ -2,6 +2,7 @@
 mix.*.js
 mix.js
 mix-manifest.json
+package-lock.json
 /coverage
 .vagrant
 /node_modules
