@@ -3,7 +3,9 @@
     {% include head.html %}
     <body class="{% if page.slug %}page-{{ page.slug }}{% endif %}">
         {% include header.html %}
-        {{ content }}
+        <div class="u-horizontal-center">
+            {{ content }}
+        </div>
         {% include footer.html %}
     </body>
 </html>
