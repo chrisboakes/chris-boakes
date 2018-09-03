@@ -1,0 +1,9 @@
+.c-page-wrap {
+    height: 100%;
+    width: 100%;
+
+    @include breakpoint($small) {
+        border: $grey-lighter solid 2rem;
+        padding: 2rem;
+    }
+}

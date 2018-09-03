@@ -1,20 +1,27 @@
 .l-header {
-    display: flex;
-    flex-direction: row;
     padding: 2rem 0;
     width: 100%;
 
+    @include breakpoint($medium) {
+        display: flex;
+        flex-direction: row;
+    }
+
     &__logo {
-        lost-column: 4/12;
-        order: 1;
+        @include breakpoint($medium) {
+            lost-column: 4/12;
+            order: 1;
+        }
     }
 
     &__nav-wrap {
-        display: flex;
-        flex-direction: row;
-        lost-column: 8/12;
-        justify-content: space-between;
-        order: 2;
+        @include breakpoint($medium) {
+            display: flex;
+            flex-direction: row;
+            lost-column: 8/12;
+            justify-content: space-between;
+            order: 2;
+        }
     }
 
     &__site-nav {
@@ -22,6 +29,6 @@
     }
 
     &__external-nav {
-        
+
     }
 }

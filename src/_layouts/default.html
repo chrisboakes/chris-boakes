@@ -2,10 +2,12 @@
 <html lang="en-GB">
     {% include head.html %}
     <body class="{% if page.slug %}page-{{ page.slug }}{% endif %}">
-        {% include header.html %}
-        <div class="u-horizontal-center l-page-content">
-            {{ content }}
+        <div class="c-page-wrap">
+            {% include header.html %}
+            <div class="u-horizontal-center l-page-content">
+                {{ content }}
+            </div>
+            {% include footer.html %}
         </div>
-        {% include footer.html %}
     </body>
 </html>
