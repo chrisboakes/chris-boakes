@@ -1,5 +1,10 @@
 //Typefaces
-$arial: 'Arial', sans-serif;
+$lato: 'Lato', sans-serif;
+$merriweather: 'Merriweather', serif;
+
+// Font weights
+$weight-light: 300;
+$weight-bold: 700;
 
 //Font sizes
 $text-small: 1.4rem;
@@ -9,7 +14,7 @@ $text-large: 3rem;
 $text-xlarge: 4rem;
 
 //Global
-$primary-font: $arial;
+$primary-font: $merriweather;
 $primary-font-color: $black;
-$primary-font-weight: normal;
+$primary-font-weight: $weight-light;
 $primary-link-color: $black;
