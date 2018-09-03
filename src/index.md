@@ -3,7 +3,6 @@ layout: default
 slug: home
 ---
 
-<h3>Posts</h3>
 <ul>
     {% for post in site.posts %}
         <li>
