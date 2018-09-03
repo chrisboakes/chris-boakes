@@ -11,19 +11,17 @@
 
     &__nav-wrap {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         lost-column: 8/12;
         justify-content: space-between;
         order: 2;
     }
 
     &__site-nav {
-        order: 2;
-        width: 100%;
+
     }
 
     &__external-nav {
-        order: 1;
-        width: 100%;
+        
     }
 }
