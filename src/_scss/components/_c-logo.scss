@@ -1,10 +1,14 @@
 .c-logo {
-    height: 6.4rem;
-    width: 19.7rem;
+    height: 4.4rem;
+    width: 13.9rem;
 
     &__link,
     &__graphic {
         height: 100%;
         width: 100%;
+    }
+
+    &__graphic {
+        fill: $blue;
     }
 }

@@ -1,20 +1,52 @@
 .l-header {
+    display: flex;
     padding: 2rem 0;
     width: 100%;
 
     @include breakpoint($medium) {
-        display: flex;
         flex-direction: row;
     }
 
     &__logo {
+        lost-column: 1/2;
+
         @include breakpoint($medium) {
             lost-column: 4/12;
             order: 1;
         }
     }
 
+    &__menu-button {
+        display: flex;
+        flex-direction: row-reverse;
+        lost-column: 1/2;
+        position: relative;
+        z-index: 10;
+    }
+
+    &__menu-trigger {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+
     &__nav-wrap {
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        transform: translateZ(0);
+        transition: opacity .4s, visibility .4s;
+        visibility: hidden;
+        width: 100%;
+        z-index: 5;
+
+        .body--menu-is-expanded & {
+            opacity: 1;
+            visibility: visible;
+        }
+
         @include breakpoint($medium) {
             display: flex;
             flex-direction: row;
