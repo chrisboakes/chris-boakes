@@ -4,6 +4,5 @@
 
     @include breakpoint($small) {
         border: $grey-lighter solid 2rem;
-        padding: 2rem;
     }
 }
