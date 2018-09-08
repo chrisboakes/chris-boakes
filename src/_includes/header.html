@@ -1,28 +1,30 @@
-<div class="u-horizontal-center">
-    <div class="l-header">
-        <div class="l-header__logo">
-            {% include components/c-logo.html %}
-        </div>
-
-        <div class="l-header__menu-button">
-            <div class="l-header__menu-trigger">
-        		<span class="c-hamburger__description js-menu-description js-menu-trigger"></span>
-                <button class="c-hamburger js-menu-trigger">
-                    <span class="c-hamburger__text u-visually-hidden">
-                        <span class="js-menu-toggle-text">Open</span> website navigation
-                    </span>
-                    <div class="c-hamburger__bar"></div>
-                </button>
-        	</div>
-        </div>
-
-        <div class="l-header__nav-wrap">
-            <div class="l-header__site-nav">
-                {% include components/c-site-nav.html %}
+<div class="l-header">
+    <div class="u-horizontal-center">
+        <div class="l-header__inner">
+            <div class="l-header__logo">
+                {% include components/c-logo.html %}
             </div>
 
-            <div class="l-header__external-nav">
-                {% include components/c-external-nav.html %}
+            <div class="l-header__menu-button">
+                <div class="l-header__menu-trigger">
+            		<span class="c-hamburger__description js-menu-description js-menu-trigger"></span>
+                    <button class="c-hamburger js-menu-trigger">
+                        <span class="c-hamburger__text u-visually-hidden">
+                            <span class="js-menu-toggle-text">Open</span> website navigation
+                        </span>
+                        <div class="c-hamburger__bar"></div>
+                    </button>
+            	</div>
+            </div>
+
+            <div class="l-header__nav-wrap c-nav">
+                <div class="l-header__site-nav">
+                    {% include components/c-site-nav.html %}
+                </div>
+
+                <div class="l-header__external-nav">
+                    {% include components/c-external-nav.html %}
+                </div>
             </div>
         </div>
     </div>
