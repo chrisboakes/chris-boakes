@@ -1,18 +1,37 @@
 .l-header {
-    display: flex;
-    padding: 2rem 0;
+    position: relative;
     width: 100%;
 
     @include breakpoint($medium) {
-        flex-direction: row;
+        border-bottom: 2rem solid $grey-lighter;
+    }
+
+    &__inner {
+        display: flex;
+        padding: 2rem 2rem;
+        width: 100%;
+
+        @include breakpoint($medium) {
+            flex-direction: column;
+            padding: 3rem 0;
+        }
+
+        @include breakpoint($large) {
+            flex-direction: row;
+        }
     }
 
     &__logo {
         lost-column: 1/2;
 
         @include breakpoint($medium) {
-            lost-column: 4/12;
+            lost-column: 1/1;
             order: 1;
+            width: 100%;
+        }
+
+        @include breakpoint($large) {
+            lost-column: 3/12;
         }
     }
 
@@ -22,6 +41,10 @@
         lost-column: 1/2;
         position: relative;
         z-index: 10;
+
+        @include breakpoint($medium) {
+            display: none;
+        }
     }
 
     &__menu-trigger {
@@ -48,19 +71,53 @@
         }
 
         @include breakpoint($medium) {
+            align-items: center;
             display: flex;
             flex-direction: row;
-            lost-column: 8/12;
+            height: inherit;
             justify-content: space-between;
+            left: inherit;
+            margin-top: 2rem;
+            opacity: 1;
             order: 2;
+            position: relative;
+            visibility: visible;
+            width: 100%;
+        }
+
+        @include breakpoint($large) {
+            lost-column: 9/12;
+            margin-top: 0;
+            justify-content: flex-end;
         }
     }
 
     &__site-nav {
+        position: relative;
+        top: 50%;
+        transform: translate(0, -50%);
 
+        @include breakpoint($medium) {
+            top: inherit;
+            transform: translate(0, 0);
+        }
     }
 
     &__external-nav {
+        bottom: 2rem;
+        position: absolute;
+        width: 100%;
 
+        @include breakpoint($medium) {
+            bottom: inherit;
+            position: relative;
+            top: -6rem;
+            width: auto;
+        }
+
+        @include breakpoint($large) {
+            position: inherit;
+            top: inherit;
+        }
     }
 }
