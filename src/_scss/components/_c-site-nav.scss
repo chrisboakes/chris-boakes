@@ -1,4 +1,8 @@
+$pages: 'home' 'about' 'blog';
+
 .c-site-nav {
+    $this: &;
+
     @include breakpoint($medium) {
         display: flex;
         flex-direction: row;
@@ -37,6 +41,16 @@
 
             &:hover {
                 color: $blue;
+            }
+        }
+
+        @each $page in $pages {
+            &--#{$page} {
+                .page-#{$page} & {
+                    #{$this}__item-link {
+                        color: $blue;
+                    }
+                }
             }
         }
     }
