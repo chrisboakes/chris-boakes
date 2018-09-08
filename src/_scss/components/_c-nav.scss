@@ -1,0 +1,12 @@
+.c-nav {
+    background-color: $white;
+    font-family: $lato;
+    font-size: $text-regular;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+
+    @include breakpoint($medium) {
+        background-color: inherit;
+    }
+}
