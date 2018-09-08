@@ -1,8 +1,43 @@
 .c-site-nav {
-    display: flex;
-    flex-direction: row;
+    @include breakpoint($medium) {
+        display: flex;
+        flex-direction: row;
+    }
 
     &__item {
-        margin-right: 1rem;
+        margin-bottom: 1.5rem;
+        padding-right: 2rem;
+        position: relative;
+
+        &::after {
+            @include breakpoint($medium) {
+                color: $blue;
+                content: '/';
+                font-weight: $weight-bold;
+                font-size: $text-medium;
+                position: absolute;
+                right: 0;
+                top: -.3rem;
+            }
+        }
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+
+        @include breakpoint($medium) {
+            margin-bottom: 0;
+            margin-right: 1rem;
+        }
+
+        &-link {
+            color: $grey-darker;
+
+            &:hover {
+                color: $blue;
+            }
+        }
     }
 }
