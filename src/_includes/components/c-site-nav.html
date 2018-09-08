@@ -1,13 +1,9 @@
 <nav>
     <ul class="c-site-nav">
-        <li class="c-site-nav__item">
-            <a href="/" class="c-site-nav__item-link">Home</a>
-        </li>
-        <li class="c-site-nav__item">
-            <a href="/about" class="c-site-nav__item-link">About</a>
-        </li>
-        <li class="c-site-nav__item">
-            <a href="/blog" class="c-site-nav__item-link">Blog</a>
-        </li>
+        {% for item in site.data.navigation.nav %}
+            <li class="c-site-nav__item c-site-nav__item--{{ item.slug }}">
+                <a href="{{ item.url }}" class="c-site-nav__item-link">{{ item.title }}</a>
+            </li>
+        {% endfor %}
     </ul>
 </nav>
