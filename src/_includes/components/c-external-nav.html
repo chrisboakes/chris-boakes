@@ -1,22 +1,11 @@
 <nav>
     <ul class="c-external-nav">
-        <li class="c-external-nav__item c-external-nav__item--github">
-            <a href="https://github.com/chrisboakes" class="c-external-nav__item-link" rel="nofollow" target="
-            ">
-                <span class="c-external-nav__item-text">Github</span>
+        {% for item in site.data.external-navigation.nav %}
+        <li class="c-external-nav__item c-external-nav__item--{{ item.slug }}">
+            <a href="{{ item.url }}" class="c-external-nav__item-link" rel="nofollow" target="_blank">
+                <span class="c-external-nav__item-text">{{ item.title }}</span>
             </a>
         </li>
-        <li class="c-external-nav__item c-external-nav__item--npm">
-            <a href="https://www.npmjs.com/~chrisboakes" class="c-external-nav__item-link" rel="nofollow" target="
-            ">
-                <span class="c-external-nav__item-text">npm</span>
-            </a>
-        </li>
-        <li class="c-external-nav__item c-external-nav__item--gist">
-            <a href="https://gist.github.com/chrisboakes" class="c-external-nav__item-link" rel="nofollow" target="
-            ">
-                <span class="c-external-nav__item-text">Gist</span>
-            </a>
-        </li>
+        {% endfor %}
     </ul>
 </nav>
