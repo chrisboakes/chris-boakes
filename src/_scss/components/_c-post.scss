@@ -1,0 +1,9 @@
+.c-post {
+    &__meta {
+        @extend .u-body-text--small;
+
+        p {
+            margin-bottom: 2rem;
+        }
+    }
+}
