@@ -58,5 +58,8 @@
         "mapCoverage": true
     },
     "author": "Chris Boakes",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "prismjs": "^1.15.0"
+    }
 }

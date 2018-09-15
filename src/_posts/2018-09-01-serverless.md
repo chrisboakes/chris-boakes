@@ -297,7 +297,7 @@ Have a look at it in your browser and you should see content for your single pos
 
 If you've added any markdown elements in your content you may notice that they aren't rendered as HTML. You'll need to use a package to do so. Add [@nuxtjs/markdownit](https://github.com/nuxt-community/modules/tree/master/packages/markdownit) `yarn add @nuxtjs/markdownit` and declare it as a module in your nuxt config file (you should now have two modules):
 
-```
+```js
 modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit'],
 markdownit: {
 	injected: true
