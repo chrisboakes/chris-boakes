@@ -7,6 +7,26 @@
         }
     }
 
+    &__meta-inner {
+        position: relative;
+
+        &::after {
+            @include breakpoint($medium) {
+                background-color: $yellow;
+                content: '';
+                height: 100%;
+                position: absolute;
+                right: -20%;
+                top: 0;
+                width: 5px;
+            }
+
+            @include breakpoint($large) {
+                right: -33.33%;
+            }
+        }
+    }
+
     &__meta-image {
         border-radius: 50%;
 
