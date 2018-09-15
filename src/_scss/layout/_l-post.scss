@@ -1,0 +1,28 @@
+.l-post {
+    @include breakpoint($medium) {
+        display: flex;
+    }
+
+    &__meta-col {
+        @include breakpoint($medium) {
+            lost-column: 3/12;
+            order: 1;
+        }
+
+        @include breakpoint($large) {
+            lost-column: 2/12;
+        }
+    }
+
+    &__content-col {
+        @include breakpoint($medium) {
+            lost-offset: 1/12;
+            lost-column: 8/12;
+            order: 2;
+        }
+
+        @include breakpoint($large) {
+            lost-column: 9/12;
+        }
+    }
+}
