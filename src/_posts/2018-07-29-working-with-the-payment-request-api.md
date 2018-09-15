@@ -15,7 +15,7 @@ The Payment Request API is a ['W3C Candidate Recommendation'](https://www.w3.org
 
 Here's how the modal looks in Chrome:
 
-![Payment Request Modal](payment-request-api-example.jpg)
+![Payment Request Modal](/assets/img/blog/payment-request-api-example.jpg)
 
 ## Using the Payment Request API
 

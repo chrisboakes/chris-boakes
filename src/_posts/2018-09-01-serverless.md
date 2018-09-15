@@ -24,7 +24,7 @@ To get started, you'll need to create an account on:
 
 Make sure you have the [Vue CLI](https://cli.vuejs.org/guide/creating-a-project.html#installation) installed. Run through the installation instructions in the [Nuxt community starter template](https://github.com/nuxt-community/starter-template) README. We'll be using this as the basis for our work. Once you've installed all of your packages, run `yarn dev` and visit [http://localhost:3000](http://localhost:3000) in your browser. You should see something like this:
 
-![Nuxt starter](image-1.png)
+![Nuxt starter](/assets/img/blog/nuxt-demo-image-1.png)
 
 ## Structure
 
@@ -193,7 +193,7 @@ We're looping through the posts array and using the [nuxt-link](https://nuxtjs.o
 
 Visit the site in your browser and you should see something like this:
 
-![Nuxt Demo Image](image-2.png)
+![Nuxt Demo Image](/assets/img/blog/nuxt-demo-image-2.png)
 
 
 ## Dynamic routing for our single post view
