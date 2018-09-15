@@ -100,7 +100,7 @@ modules: ['@nuxtjs/dotenv']
 
 Create a new file in the root of our project with the filename `.env`. This is where we'll store our API keys. Add this file to your list of gitignored files to ensure these are not pushed to your git repo. Have your Space ID (Settings > General Settings) ready and add a new Content Delivery Access Token (Settings > API Keys). In the `.env` file, assign them:
 
-```
+```bash
 CTF_SPACE_ID=YOUR_SPACE_ID
 CTF_CD_ACCESS_TOKEN=YOUR_ACCESS_TOKEN
 ```
