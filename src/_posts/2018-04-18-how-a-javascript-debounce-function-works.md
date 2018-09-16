@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Understanding how a Javascript ES6 debounce function works"
+title:  "Understanding how a JavaScript ES6 debounce function works"
 date:   2018-04-18 09:28:59
 categories: ['debounce', 'javascript']
 ---
 
 # Understanding how a Javascript ES6 debounce function works
 
-I was asked recently how debouncing works in Javascript. I knew why I should use it, what it did and that the ES6 helper function I'd been using was short and easy to read through. However I didn't grasp *how* it works. Let's start by taking a look at a commonly used debounce function:
+I was asked recently how debouncing works in JavaScript. I knew why I should use it, what it did and that the ES6 helper function I'd been using was short and easy to read through. However I didn't grasp *how* it works. Let's start by taking a look at a commonly used debounce function:
 
 ```js
 debounce(callback, wait) {
@@ -67,8 +67,8 @@ The `clearTimeout` method is resetting the timeout each time the function is cal
 
 To understand how the scope of this works, we need to understand how the browser deals with `setTimeout`. To do this, let's talk about the 'execution context' and 'execution stack'.
 
-* **Execution Context** - every time you invoke or use a function in Javascript a new context is created with its own set of variables, functions etc.
-* **Global Execution Context** - the global environment Javascript executes on. *Note* there can only one of these.
+* **Execution Context** - every time you invoke or use a function in JavaScript a new context is created with its own set of variables, functions etc.
+* **Global Execution Context** - the global environment JavaScript executes on. *Note* there can only one of these.
 * **Execution Stack** - the list of execution contexts that will run synchronously, line by line
 
 In the context of `setTimeout`, every iteration brings the method running inside of it to the top of the execution stack. When it runs, it creates its own execution context.
