@@ -7,7 +7,7 @@ category: accessibility
 
 # Improving Accessibility On Your Web Application
 
-Advancing my knowledge around the topic of accessiblity has been something I've been doing a lot recently. With this knowledge came the realisation that previous web applications I'd worked on could do with some improvements in this field. Ideally accessiblity should be a consideration from the inception of the project and shouldn't be implemented after the application has already been built. However there are a few *quick wins* which could fundamentally improve the accessiblity of your web application post-build. While this article will skim the surface of a larger topic, it aims to focus on a few impactful concepts.
+Advancing my knowledge around the topic of accessibility has been something I've been doing a lot recently. With this knowledge came the realisation that previous web applications I'd worked on could do with some improvements in this field. Ideally accessibility should be a consideration from the inception of the project and shouldn't be implemented after the application has already been built. However there are a few *quick wins* which could fundamentally improve the accessibility of your web application post-build. While this article will skim the surface of a larger topic, it aims to focus on a few impactful concepts.
 
 ## Rewrite your `alt` tags
 
@@ -15,7 +15,7 @@ I found the `alt` attribute generally did exist on my `img` tags, however it was
 
 ## Give your links context
 
-If you try navigating a web application by links alone, you will notice there is no context to links such as 'read more' or 'see more'. To a user with no sight impairment they make sense within the structue but to screen readers they often don't. Instead of making long links such as 'Read more about the history of the United Kingdom' which may break your layout. I recommend using the approach outlined in this ['I thought title text improved accessibility. I was wrong.' article](https://silktide.com/i-thought-title-text-improved-accessibility-i-was-wrong/). To illustrate, your markup could be:
+If you try navigating a web application by links alone, you will notice there is no context to links such as 'read more' or 'see more'. To a user with no sight impairment they make sense within the structure but to screen readers they often don't. Instead of making long links such as 'Read more about the history of the United Kingdom' which may break your layout. I recommend using the approach outlined in this ['I thought title text improved accessibility. I was wrong.' article](https://silktide.com/i-thought-title-text-improved-accessibility-i-was-wrong/). To illustrate, your markup could be:
 
 ```html
 <a href="/history" class="u-more">
@@ -25,7 +25,7 @@ If you try navigating a web application by links alone, you will notice there is
 
 Your CSS would then be:
 
-```scss
+```css
 .u-visually-hidden {
 	height: 1px;
 	overflow: hidden;
@@ -91,7 +91,7 @@ We could greatly improve it by structuring it like so:
 </nav>
 ```
 
-We would then use the CSS techique to visually hide the phrase 'Current Page: '. In this example we're telling the screen reader the purpose of the list and letting the user know which page they're on without aesthetically changing anything.
+We would then use the CSS technique to visually hide the phrase 'Current Page: '. In this example we're telling the screen reader the purpose of the list and letting the user know which page they're on without aesthetically changing anything.
 
 ## Accessible Forms
 

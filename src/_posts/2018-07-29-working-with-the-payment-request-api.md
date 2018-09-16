@@ -120,7 +120,7 @@ Now all we need to do is bind this functionality to something which, for the pur
 
 Let's create a method to call in the aforementioned conditional:
 
-```js=
+```js
 setPayment() {
 	document.querySelector('.js-pay').onclick = (e) => {
 		e.preventDefault()
@@ -131,7 +131,9 @@ setPayment() {
 
 And now let's call this method after we've assigned the `PaymentRequest` to a variable:
 
+```js
 setPayment();
+```
 
 ## Conclusion
 
