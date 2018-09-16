@@ -8,11 +8,11 @@
         font-weight: $weight-bold;
     }
 
-    ul {
+    ul, ol {
         @extend .u-body-text;
         list-style-type: disc;
         margin-bottom: 2rem;
-        margin-left: 1.5em;
+        margin-left: 3em;
     }
 
     h1 {
