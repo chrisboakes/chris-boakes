@@ -8,7 +8,14 @@
     }
 
     &__meta-inner {
+        border-top: $blue solid 3px;
+        padding-top: 3rem;
         position: relative;
+
+        @include breakpoint($medium) {
+            border-top: 0;
+            padding-top: 0;
+        }
 
         &::after {
             @include breakpoint($medium) {
@@ -29,9 +36,18 @@
 
     &__meta-image {
         border-radius: 50%;
+        margin: 0 auto;
+        max-width: 20rem;
+        width: 100%;
 
         &-wrap {
             margin-bottom: 2rem;
         }
+    }
+
+    &__meta-text {
+        margin: 0 auto;
+        max-width: 25rem;
+        width: 100%;
     }
 }
