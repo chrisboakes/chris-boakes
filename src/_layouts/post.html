@@ -15,7 +15,9 @@ layout: default
             </div>
             <div class="c-post__meta-text">
                 {% assign blogBio = site.bios %}
-                {{ blogBio }}
+                {% for item in blogBio %}
+                    {{ item | markdownify }}
+                {% endfor %}
             </div>
         </div>
     </div>
