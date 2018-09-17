@@ -3,7 +3,7 @@ layout: default
 slug: home
 ---
 
-{% assign intro = site.bios %}
+{% assign intro = site.bios | where: "slug", "blog" %}
 <p class="intro">{{ intro }}</p>
 
 <div>

@@ -1,5 +1,6 @@
 ---
 title:  "Blog Bio"
+slug: blog
 ---
 
 Hi, I’m Chris. A front-end web developer based in the metropolis of London, England.
