@@ -1,0 +1,10 @@
+.l-about {
+    @include breakpoint($medium) {
+        display: flex;
+    }
+
+    &__content {
+        lost-column: 9/12;
+        lost-offset: 3/12;
+    }
+}

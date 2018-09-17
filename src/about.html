@@ -1,0 +1,19 @@
+---
+layout: default
+title: About
+slug: about
+description: About my website
+---
+
+<div class="l-about">
+    <div class="l-about__content">
+        <div class="s-content">
+            <h1>Hello</h1>
+            
+            {% assign aboutBio = site.bios | where: "slug", "about" %}
+            {% for bio in aboutBio %}
+                {{ bio | markdownify }}
+            {% endfor %}
+        </div>
+    </div>
+</div>
