@@ -3,6 +3,7 @@ layout: post
 title:  "Static and serverless with Nuxt.js, Vuex, Contentful, Netlify"
 date:   2018-09-01 09:28:59
 categories: ['serverless', 'javascript', 'vuejs', 'contentful', 'netlify']
+excerpt: "I'm a big fan of Vue.js and Vuex for state management. Combine this with Nuxt and you can generate a static version of your Vue application and give your users a speedy site served from HTML files."
 ---
 
 # Static and serverless with Nuxt.js, Vuex, Contentful, Netlify
@@ -24,7 +25,7 @@ To get started, you'll need to create an account on:
 
 Make sure you have the [Vue CLI](https://cli.vuejs.org/guide/creating-a-project.html#installation) installed. Run through the installation instructions in the [Nuxt community starter template](https://github.com/nuxt-community/starter-template) README. We'll be using this as the basis for our work. Once you've installed all of your packages, run `yarn dev` and visit [http://localhost:3000](http://localhost:3000) in your browser. You should see something like this:
 
-![Nuxt starter](image-1.png)
+![Nuxt starter](/assets/img/blog/nuxt-demo-image-1.png)
 
 ## Structure
 
@@ -100,7 +101,7 @@ modules: ['@nuxtjs/dotenv']
 
 Create a new file in the root of our project with the filename `.env`. This is where we'll store our API keys. Add this file to your list of gitignored files to ensure these are not pushed to your git repo. Have your Space ID (Settings > General Settings) ready and add a new Content Delivery Access Token (Settings > API Keys). In the `.env` file, assign them:
 
-```
+```bash
 CTF_SPACE_ID=YOUR_SPACE_ID
 CTF_CD_ACCESS_TOKEN=YOUR_ACCESS_TOKEN
 ```
@@ -193,7 +194,7 @@ We're looping through the posts array and using the [nuxt-link](https://nuxtjs.o
 
 Visit the site in your browser and you should see something like this:
 
-![Nuxt Demo Image](image-2.png)
+![Nuxt Demo Image](/assets/img/blog/nuxt-demo-image-2.png)
 
 
 ## Dynamic routing for our single post view
@@ -297,7 +298,7 @@ Have a look at it in your browser and you should see content for your single pos
 
 If you've added any markdown elements in your content you may notice that they aren't rendered as HTML. You'll need to use a package to do so. Add [@nuxtjs/markdownit](https://github.com/nuxt-community/modules/tree/master/packages/markdownit) `yarn add @nuxtjs/markdownit` and declare it as a module in your nuxt config file (you should now have two modules):
 
-```
+```js
 modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit'],
 markdownit: {
 	injected: true

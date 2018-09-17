@@ -3,6 +3,7 @@ layout: post
 title:  "Working with the Payment Request API"
 date:   2018-07-29 09:28:59
 categories: ['payment-request-api', 'javascript']
+excerpt: "One of things that irks me about the usability of shopping online is the inconsistent checkout experience between different merchants. Do I really need to enter the same delivery/billing address, card number, CVC code etc. into every websites specific form? Enter the Payment Request API."
 ---
 
 # Working with the Payment Request API
@@ -15,7 +16,7 @@ The Payment Request API is a ['W3C Candidate Recommendation'](https://www.w3.org
 
 Here's how the modal looks in Chrome:
 
-![Payment Request Modal](payment-request-api-example.jpg)
+![Payment Request Modal](/assets/img/blog/payment-request-api-example.jpg)
 
 ## Using the Payment Request API
 
@@ -120,7 +121,7 @@ Now all we need to do is bind this functionality to something which, for the pur
 
 Let's create a method to call in the aforementioned conditional:
 
-```js=
+```js
 setPayment() {
 	document.querySelector('.js-pay').onclick = (e) => {
 		e.preventDefault()
@@ -131,7 +132,9 @@ setPayment() {
 
 And now let's call this method after we've assigned the `PaymentRequest` to a variable:
 
+```js
 setPayment();
+```
 
 ## Conclusion
 

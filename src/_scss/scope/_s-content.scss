@@ -1,19 +1,35 @@
 .s-content {
     p {
-        margin: 0 0 1rem;
+        @extend .u-body-text;
+        margin: 0 0 2rem;
     }
 
-    ul {
+    strong {
+        font-weight: $weight-bold;
+    }
+
+    ul, ol {
+        @extend .u-body-text;
         list-style-type: disc;
-        margin-left: 1.5em;
+        margin-bottom: 2rem;
+        margin-left: 3em;
     }
 
-    h2,
+    h1 {
+        @extend .u-title;
+    }
+
+    h2 {
+        @extend .u-title--medium;
+        border-bottom: $yellow solid 3px;
+        padding: 0 0 1rem;
+        margin: 0 0 2rem;
+    }
+
     h3,
     h4 {
-        font-weight: bold;
-        line-height: 1.2;
-        margin: 0 0 1rem;
+        @extend .u-title--smaller;
+        margin: 0 0 2rem;
     }
 
     img {
@@ -23,8 +39,18 @@
     }
 
     a {
+        color: $blue;
+        font-weight: $weight-bold;
+        text-decoration: underline;
+
         &:hover {
-            text-decoration: underline;
+            background-color: $blue;
+            color: $white;
+            text-decoration: none;
         }
+    }
+
+    .highlighter-rouge {
+        margin-bottom: 2rem;
     }
 }

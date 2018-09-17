@@ -1,0 +1,53 @@
+.c-post {
+    &__meta {
+        @extend .u-body-text--small;
+
+        p {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__meta-inner {
+        border-top: $blue solid 3px;
+        padding-top: 3rem;
+        position: relative;
+
+        @include breakpoint($medium) {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        &::after {
+            @include breakpoint($medium) {
+                background-color: $yellow;
+                content: '';
+                height: 100%;
+                position: absolute;
+                right: -20%;
+                top: 0;
+                width: 5px;
+            }
+
+            @include breakpoint($large) {
+                right: -33.33%;
+            }
+        }
+    }
+
+    &__meta-image {
+        border-radius: 50%;
+        margin: 0 auto;
+        max-width: 20rem;
+        width: 100%;
+
+        &-wrap {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__meta-text {
+        margin: 0 auto;
+        max-width: 25rem;
+        width: 100%;
+    }
+}

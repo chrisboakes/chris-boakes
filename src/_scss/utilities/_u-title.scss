@@ -1,0 +1,31 @@
+.u-title {
+    font-size: $text-large;
+    font-weight: $weight-bold;
+    margin-bottom: 2rem;
+
+    @include breakpoint($medium) {
+        font-size: $text-xlarge;
+        margin-bottom: 3rem;
+        width: 90%;
+    }
+
+    @include breakpoint($large) {
+        width: 70%;
+    }
+
+    &--medium {
+        font-size: $text-large;
+        font-weight: $weight-bold;
+        line-height: 1.2;
+
+        @include breakpoint($medium) {
+
+        }
+    }
+
+    &--smaller {
+        font-size: $text-medium-large;
+        font-weight: $weight-bold;
+        line-height: 1.2;
+    }
+}

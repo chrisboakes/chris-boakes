@@ -10,6 +10,5 @@ package-lock.json
 __MACOSX/
 *.sql
 *.zip
-/src/assets/*
-!/src/assets/.gitkeep
+/src/assets/build/*
 !/public/.gitkeep
