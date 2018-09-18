@@ -1,12 +1,12 @@
 .l-about {
     @include breakpoint($medium) {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
     }
 
     &__content {
         @include breakpoint($medium) {
-            lost-column: 9/12;
-            lost-offset: 3/12;
+            grid-column: 4/-1;
         }
     }
 }
