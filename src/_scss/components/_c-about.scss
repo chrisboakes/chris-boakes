@@ -1,0 +1,14 @@
+.c-about {
+    &__content-wrap {
+        position: relative;
+
+        &::before {
+            background-color: $yellow;
+            content: '';
+            height: 100%;
+            left: -8.7%;
+            position: absolute;
+            width: 5px;
+        }
+    }
+}

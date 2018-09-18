@@ -4,7 +4,9 @@
     }
 
     &__content {
-        lost-column: 9/12;
-        lost-offset: 3/12;
+        @include breakpoint($medium) {
+            lost-column: 9/12;
+            lost-offset: 3/12;
+        }
     }
 }
