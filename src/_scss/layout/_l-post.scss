@@ -1,18 +1,23 @@
 .l-post {
+    width: 100%;
+
     @include breakpoint($medium) {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
     }
+
     &__meta-col {
         @include breakpoint($medium) {
             grid-column: 1/4;
             grid-row: 1;
             order: 1;
         }
+
         @include breakpoint($large) {
             grid-column: 1/3;
         }
     }
+
     &__content-col {
         @include breakpoint($medium) {
             grid-column: 5/-1;

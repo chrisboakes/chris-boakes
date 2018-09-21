@@ -52,5 +52,12 @@
 
     .highlighter-rouge {
         margin-bottom: 2rem;
+
+        code {
+            body & {
+                // A little hacky but needed to override Prismjs styling
+                white-space: pre-wrap;
+            }
+        }
     }
 }
