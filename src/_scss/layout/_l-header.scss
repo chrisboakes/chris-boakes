@@ -7,50 +7,41 @@
     }
 
     &__inner {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         padding: 2rem 0;
         width: 100%;
 
         @include breakpoint($medium) {
-            flex-direction: column;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;
             padding: 3rem 0;
         }
 
         @include breakpoint($large) {
-            flex-direction: row;
+            grid-template-columns: 3fr 9fr;
+            grid-template-rows: 1fr;
         }
     }
 
     &__logo {
-        lost-column: 1/2;
+        opacity: 1;
 
         @include breakpoint($medium) {
-            lost-column: 1/1;
             order: 1;
             width: 100%;
-        }
-
-        @include breakpoint($large) {
-            lost-column: 3/12;
         }
     }
 
     &__menu-button {
-        display: flex;
-        flex-direction: row-reverse;
-        lost-column: 1/2;
+        align-self: center;
+        justify-self: end;
         position: relative;
         z-index: 10;
 
         @include breakpoint($medium) {
             display: none;
         }
-    }
-
-    &__menu-trigger {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
     }
 
     &__nav-wrap {
@@ -71,13 +62,12 @@
         }
 
         @include breakpoint($medium) {
-            align-items: center;
-            display: flex;
-            flex-direction: row;
+            align-items: end;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             height: inherit;
-            justify-content: space-between;
             left: inherit;
-            margin-top: 2rem;
+            margin-top: 1rem;
             opacity: 1;
             order: 2;
             position: relative;
@@ -86,9 +76,9 @@
         }
 
         @include breakpoint($large) {
-            lost-column: 9/12;
+            align-items: center;
+            justify-items: end;
             margin-top: 0;
-            justify-content: flex-end;
         }
     }
 
@@ -116,7 +106,6 @@
         }
 
         @include breakpoint($large) {
-            position: inherit;
             top: inherit;
         }
     }
