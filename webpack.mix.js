@@ -22,7 +22,7 @@ mix.setPublicPath('./');
 // Styles
 mix.sass(scssSrcPath, destPath)
     .options({
-        postCss: [require('lost')(), require('postcss-encode-background-svgs')()],
+        postCss: [require('postcss-encode-background-svgs')()],
         processCssUrls: false
     });
 
