@@ -1,4 +1,6 @@
 .l-header {
+    $this: &;
+    background-color: $white;
     position: relative;
     width: 100%;
 
@@ -107,6 +109,15 @@
 
         @include breakpoint($large) {
             top: inherit;
+        }
+    }
+
+    body.theme-yellow & {
+        background-color: $yellow;
+        //#{$this}__
+
+        @include breakpoint($medium) {
+            border-bottom-color: $yellow;
         }
     }
 }

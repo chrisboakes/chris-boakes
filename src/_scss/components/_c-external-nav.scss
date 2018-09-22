@@ -1,4 +1,5 @@
 .c-external-nav {
+    $this: &;
     margin-top: 2.5rem;
 
     @include breakpoint($medium) {
@@ -84,6 +85,12 @@
                     background-position: 0;
                 }
             }
+        }
+    }
+
+    body.theme-yellow & {
+        #{$this}-link {
+            border-color: $black;
         }
     }
 }

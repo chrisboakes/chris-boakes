@@ -59,4 +59,14 @@ $pages: 'home' 'about' 'blog';
             }
         }
     }
+
+    body.theme-yellow & {
+        #{$this}__item-link {
+            color: $white;
+
+            &:hover {
+                border-bottom: 2px solid $white;
+            }
+        }
+    }
 }

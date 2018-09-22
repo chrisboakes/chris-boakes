@@ -1,4 +1,5 @@
 .c-logo {
+    $this: &;
     height: 4.4rem;
     width: 13.9rem;
 
@@ -10,5 +11,11 @@
 
     &__graphic {
         fill: $blue;
+    }
+
+    body.theme-yellow & {
+        #{$this}__graphic {
+            fill: $white;
+        }
     }
 }

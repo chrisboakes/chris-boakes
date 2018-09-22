@@ -4,4 +4,8 @@
     @include breakpoint($medium) {
         background-color: inherit;
     }
+
+    body.theme-yellow & {
+        background-color: $yellow;
+    }
 }
