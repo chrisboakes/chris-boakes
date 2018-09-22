@@ -3,9 +3,6 @@ layout: default
 slug: home
 ---
 
-{% assign intro = site.bios | where: "slug", "blog" %}
-<p class="intro">{{ intro }}</p>
-
 <div>
 {% for post in site.posts %}
     {% include components/c-article-preview.html %}

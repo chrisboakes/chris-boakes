@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-GB">
     {% include head.html %}
-    <body class="{% if page.slug %}page-{{ page.slug }}{% endif %}">
+    <body class="{% if page.slug %}page-{{ page.slug }}{% endif %}{% if page.slug == 'home' %} theme-yellow{% endif %}">
         <div class="c-page-wrap">
             {% include header.html %}
             <div class="u-horizontal-center">
