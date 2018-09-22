@@ -114,10 +114,14 @@
 
     body.theme-yellow & {
         background-color: $yellow;
-        //#{$this}__
+        border-bottom-color: transparent;
 
         @include breakpoint($medium) {
-            border-bottom-color: $yellow;
+            background-color: inherit;
+            border-bottom-color: transparent;
+            left: 0;
+            position: absolute;
+            top: 0;
         }
     }
 }

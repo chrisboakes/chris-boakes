@@ -1,0 +1,31 @@
+.l-home {
+    height: 100%;
+
+    &__intro {
+        @include breakpoint($medium) {
+            height: 100%;
+        }
+
+        &-inner {
+            @include breakpoint($medium) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                height: 100%;
+                margin: 0 auto;
+                max-width: 1000px;
+            }
+        }
+
+        &-section {
+            align-items: center;
+            display: flex;
+            min-height: 25rem;
+            height: 50%;
+            justify-content: center;
+
+            @include breakpoint($medium) {
+                height: 100%;
+            }
+        }
+    }
+}

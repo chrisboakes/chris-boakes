@@ -8,7 +8,8 @@
 
     body.theme-yellow & {
         @include breakpoint($small) {
-            border-color: $yellow;
+            border-color: $white;
+            border-top: 0;
         }
     }
 }

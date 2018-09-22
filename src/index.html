@@ -5,32 +5,39 @@ slug: home
 
 <div class="c-home l-home">
     <section class="c-home__intro l-home__intro">
-        <div class="l-home__intro-section">
-            <div class="l-home__intro-section-center">
-                <h2 class="c-home__intro-title">Code</h2>
-                <nav>
-                    <ul class="c-home__intro-links">
-                        {% for item in site.data.external-navigation.nav %}
-                        <li class="c-home__intro-link-item">
-                            <a href="{{ item.url }}" class="c-home__intro-link-item-link" rel="nofollow" target="_blank">
-                                {{ item.title }}
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </nav>
+        <div class="c-home__intro l-home__intro-inner">
+            <div class="l-home__intro-section">
+                <div class="c-home__intro-section-center l-home__intro-section-center">
+                    <h2 class="c-home__intro-title">Code</h2>
+
+                    <div class="c-home__intro-meta">
+                        <nav>
+                            <ul class="c-home__intro-links">
+                                {% for item in site.data.external-navigation.nav %}
+                                <li class="c-home__intro-link-item">
+                                    <a href="{{ item.url }}" class="c-home__intro-link-item-link" rel="nofollow" target="_blank">
+                                        {{ item.title }}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="l-home__intro-section">
-            <div class="l-home__intro-section-center">
-                <h2 class="c-home__intro-title">Blog</h2>
+            <div class="l-home__intro-section">
+                <div class="c-home__intro-section-center l-home__intro-section-center">
+                    <h2 class="c-home__intro-title">Blog</h2>
 
-                <p class="c-home__intro-more">
-                    <a href="#home-posts" class="c-home__intro-more-link">
-                        Read on<span class="u-visually-hidden"> for blog entries</span>
-                    </a>
-                </p>
+                    <div class="c-home__intro-meta">
+                        <p class="c-home__intro-more">
+                            <a href="#home-posts" class="c-home__intro-more-link">
+                                Read on<span class="u-visually-hidden"> for blog entries</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -45,7 +52,7 @@ slug: home
                 </div>
             </div>
         </section>
-        
+
         {% include footer.html %}
     </div>
 </div>

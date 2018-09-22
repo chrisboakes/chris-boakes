@@ -1,0 +1,27 @@
+.c-home {
+    &__intro {
+        background-color: $yellow;
+
+        &-title {
+            color: $white;
+            font-size: 8rem;
+            font-weight: $weight-bold;
+
+            @include breakpoint($large) {
+                font-size: 14.4rem;
+            }
+        }
+
+        &-meta {
+            background-color: red;
+
+            @include breakpoint($medium) {
+                min-height: 10rem;
+            }
+        }
+
+        &-section-center {
+            text-align: center;
+        }
+    }
+}

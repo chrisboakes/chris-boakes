@@ -7,5 +7,9 @@
 
     body.theme-yellow & {
         background-color: $yellow;
+
+        @include breakpoint($medium) {
+            background-color: inherit;
+        }
     }
 }
