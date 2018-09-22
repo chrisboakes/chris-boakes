@@ -3,8 +3,41 @@ layout: default
 slug: home
 ---
 
-<div>
-{% for post in site.posts %}
-    {% include components/c-article-preview.html %}
-{% endfor %}
+<div class="c-home l-home">
+    <section class="c-home__intro l-home__intro">
+        <div class="l-home__intro-section">
+            <div class="l-home__intro-section-center">
+                <h2 class="c-home__intro-title">Code</h2>
+                <nav>
+                    <ul class="c-home__intro-links">
+                        {% for item in site.data.external-navigation.nav %}
+                        <li class="c-home__intro-link-item">
+                            <a href="{{ item.url }}" class="c-home__intro-link-item-link" rel="nofollow" target="_blank">
+                                {{ item.title }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="l-home__intro-section">
+            <div class="l-home__intro-section-center">
+                <h2 class="c-home__intro-title">Blog</h2>
+
+                <p class="c-home__intro-more">
+                    <a href="#home-posts" class="c-home__intro-more-link">
+                        Read on<span class="u-visually-hidden"> for blog entries</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="l-home__posts c-home__posts" id="home-posts">
+        {% for post in site.posts %}
+            {% include components/c-article-preview.html %}
+        {% endfor %}
+    </section>
 </div>
