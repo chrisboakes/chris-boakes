@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 slug: home
 ---
 
@@ -35,9 +35,17 @@ slug: home
         </div>
     </section>
 
-    <section class="l-home__posts c-home__posts" id="home-posts">
-        {% for post in site.posts %}
-            {% include components/c-article-preview.html %}
-        {% endfor %}
-    </section>
+    <div class="c-page-wrap">
+        <section class="l-home__posts c-home__posts" id="home-posts">
+            <div class="u-horizontal-center">
+                <div class="l-page-content">
+                    {% for post in site.posts %}
+                        {% include components/c-article-preview.html %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        
+        {% include footer.html %}
+    </div>
 </div>
