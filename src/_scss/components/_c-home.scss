@@ -16,12 +16,21 @@
             background-color: red;
 
             @include breakpoint($medium) {
-                min-height: 10rem;
+                min-height: 9rem;
             }
         }
 
         &-section-center {
             text-align: center;
+        }
+
+        &-link-item {
+            margin-bottom: 1rem;
+
+            &-link {
+                color: $white;
+                font-weight: $weight-bold;
+            }
         }
     }
 }
