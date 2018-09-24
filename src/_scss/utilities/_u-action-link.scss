@@ -1,6 +1,6 @@
 .u-action-link {
     font-family: $lato;
-    font-size: $text-regular;
+    font-size: $text-medium;
     font-weight: $weight-bold;
     position: relative;
     text-transform: uppercase;
@@ -15,14 +15,21 @@
         right: 0;
     }
 
-    &--right {
-        padding-right: 2.3rem;
+    &--code-link {
+        display: block;
+        margin: 0 auto;
+        text-align: left;
+        width: 9.5rem;
+    }
 
+    &--right {
         &::after {
             $url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158.2 256"><path d="M30.2 0L0 30.2 97.8 128 0 225.8 30.2 256l128-128L30.2 0z"/></svg>';
             background-image: url('data:image/svg+xml, #{$url}');
-            height: 21px;
-            width: 13px;
+            height: 16px;
+            top: 50%;
+            transform: translate(0, -50%);
+            width: 10px;
         }
 
         &-white {
@@ -36,7 +43,7 @@
     }
 
     &--down {
-        padding-bottom: 2rem;
+        padding-bottom: 2.2rem;
 
         &::after {
             $url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 158.2"><path d="M256 30.2L225.8 0 128 97.8 30.2 0 0 30.2l128 128 128-128z"/></svg>';

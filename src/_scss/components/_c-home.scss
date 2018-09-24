@@ -12,16 +12,24 @@
             }
         }
 
-        &-meta {
-            background-color: red;
+        &-section-center {
+            display: flex;
+            height: 230px;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
 
             @include breakpoint($medium) {
-                min-height: 9rem;
+                height: 230px;
+            }
+            
+            @include breakpoint($large) {
+                height: 361px;
             }
         }
 
-        &-section-center {
-            text-align: center;
+        &-meta {
+            height: 9.5rem;
         }
 
         &-link-item {
