@@ -119,9 +119,10 @@
         @include breakpoint($medium) {
             background-color: inherit;
             border-bottom-color: transparent;
-            left: 0;
+            left: 2rem;
             position: absolute;
-            top: 0;
+            top: 2rem;
+            width: calc(100% - 4rem);
         }
     }
 }
