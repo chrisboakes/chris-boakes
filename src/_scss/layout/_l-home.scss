@@ -7,12 +7,17 @@
         }
 
         &-inner {
+            display: flex;
+            flex-direction: column;
+
             @include breakpoint($medium) {
                 display: grid;
+                flex-direction: row;
                 grid-template-columns: 1fr 1fr;
                 height: 100%;
                 margin: 0 auto;
                 max-width: 1000px;
+                position: relative;
             }
         }
 
@@ -21,11 +26,35 @@
             display: flex;
             min-height: 25rem;
             height: 50%;
+            position: relative;
             justify-content: center;
+            z-index: 1;
 
             @include breakpoint($medium) {
                 height: 100%;
             }
+
+            &--code {
+                order: 2;
+            }
+
+            &--blog {
+                order: 3;
+            }
+        }
+    }
+
+    &__image-wrap {
+        display: flex;
+        order: 1;
+
+        @include breakpoint($medium) {
+            left: 50%;
+            order: 3;
+            position: absolute;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
         }
     }
 }

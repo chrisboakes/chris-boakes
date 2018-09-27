@@ -41,4 +41,17 @@
             }
         }
     }
+
+    &__profile-img {
+        border-radius: 50%;
+        height: 15rem;
+        margin: 0 auto;
+        margin-top: 2rem;
+        width: 15rem;
+
+        @include breakpoint($medium) {
+            height: 20rem;
+            width: 20rem;
+        }
+    }
 }
