@@ -3,6 +3,7 @@
     background-color: $white;
     position: relative;
     width: 100%;
+    z-index: 2;
 
     @include breakpoint($medium) {
         border-bottom: 2rem solid $grey-lighter;
