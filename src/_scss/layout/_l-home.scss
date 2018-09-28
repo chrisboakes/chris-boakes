@@ -52,9 +52,13 @@
             left: 50%;
             order: 3;
             position: absolute;
-            top: 40%;
+            top: 43%;
             transform: translate(-50%, -50%);
             z-index: 0;
+        }
+
+        @include breakpoint($large) {
+            top: 40%;
         }
     }
 }
