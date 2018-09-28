@@ -1,3 +1,13 @@
 .l-blog-grid {
-    display: grid;  
+    @include breakpoint($medium) {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        width: 100%;
+    }
+
+    &__item {
+        @include breakpoint($medium) {
+            grid-column: 4/10;
+        }
+    }
 }

@@ -52,7 +52,9 @@ slug: home
                 <div class="l-page-content">
                     <div class="l-blog-grid">
                         {% for post in site.posts %}
-                            {% include components/c-article-preview.html %}
+                            <div class="l-blog-grid__item">
+                                {% include components/c-article-preview.html %}
+                            </div>
                         {% endfor %}
                     </div>
                 </div>
