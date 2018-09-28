@@ -1,0 +1,23 @@
+.c-article-preview {
+    border-top: $yellow solid 3px;
+    margin-top: 3rem;
+    padding-top: 3rem;
+
+    &__title {
+        font-size: $text-large;
+        margin-bottom: 2rem;
+
+        @include breakpoint($medium) {
+            font-size: $text-large;
+        }
+    }
+
+    &__title-link {
+        color: $black;
+        font-weight: $weight-bold;
+    }
+
+    &__excerpt {
+        margin-bottom: 2rem;
+    }
+}

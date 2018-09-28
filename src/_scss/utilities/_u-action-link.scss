@@ -2,6 +2,7 @@
     font-family: $lato;
     font-size: $text-medium;
     font-weight: $weight-bold;
+    padding-right: 2rem;
     position: relative;
     text-transform: uppercase;
 
@@ -18,6 +19,7 @@
     &--code-link {
         display: block;
         margin: 0 auto;
+        padding-right: 0;
         text-align: left;
         width: 9.5rem;
     }
@@ -40,9 +42,19 @@
                 background-image: url('data:image/svg+xml, #{$url}');
             }
         }
+
+        &-blue {
+            color: $blue;
+
+            &::after {
+                $url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158.2 256"><path fill="#{$blue}" d="M30.2 0L0 30.2 97.8 128 0 225.8 30.2 256l128-128L30.2 0z"/></svg>';
+                background-image: url('data:image/svg+xml, #{$url}');
+            }
+        }
     }
 
     &--down {
+        padding-right: 0;
         padding-bottom: 2.2rem;
 
         &::after {

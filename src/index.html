@@ -50,9 +50,11 @@ slug: home
         <section class="l-home__posts c-home__posts" id="home-posts">
             <div class="u-horizontal-center">
                 <div class="l-page-content">
-                    {% for post in site.posts %}
-                        {% include components/c-article-preview.html %}
-                    {% endfor %}
+                    <div class="l-blog-grid">
+                        {% for post in site.posts %}
+                            {% include components/c-article-preview.html %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </section>

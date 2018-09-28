@@ -7,6 +7,10 @@
             font-size: 8rem;
             font-weight: $weight-bold;
 
+            @include breakpoint($medium) {
+                font-size: 12rem;
+            }
+
             @include breakpoint($large) {
                 font-size: 14.4rem;
             }
@@ -20,9 +24,9 @@
             text-align: center;
 
             @include breakpoint($medium) {
-                height: 230px;
+                height: 250px;
             }
-            
+
             @include breakpoint($large) {
                 height: 361px;
             }

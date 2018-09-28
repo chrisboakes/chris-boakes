@@ -6,6 +6,10 @@
             </a>
         </h2>
         <p class="c-article-preview__excerpt">{{ post.excerpt }}</p>
-        <p class="u-read-more"><a href="{{ post.url }}">Read the article <span class="u-visually-hidden">about {{ post.title }}</span></a></p>
+        <p class="u-read-more">
+            <a href="{{ post.url }}" class="u-action-link u-action-link--right u-action-link--right-blue">
+                Read the article <span class="u-visually-hidden">about {{ post.title }}</span>
+            </a>
+        </p>
     </header>
 </article>
