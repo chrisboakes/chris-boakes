@@ -2,6 +2,10 @@
     border-top: $yellow solid 8px;
     padding-top: 5rem;
 
+    &--blue {
+        border-top: $blue solid 8px;
+    }
+
     &__inner {
         @include breakpoint($large) {
             padding: 0 5rem;
@@ -11,7 +15,7 @@
 
     &__title {
         font-size: $text-large;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
 
         @include breakpoint($medium) {
             font-size: $text-large;
@@ -24,6 +28,7 @@
     }
 
     &__excerpt {
-        margin-bottom: 2rem;
+        line-height: 1.8;
+        margin-bottom: 3rem;
     }
 }

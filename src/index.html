@@ -51,8 +51,10 @@ slug: home
             <div class="u-horizontal-center">
                 <div class="l-page-content">
                     <div class="l-blog-grid">
+                        {% assign count = 0 %}
                         {% for post in site.posts %}
                             <div class="l-blog-grid__item">
+                                {% assign count = count | plus: 1 %}
                                 {% include components/c-article-preview.html %}
                             </div>
                         {% endfor %}
