@@ -24,7 +24,13 @@
 
     &__title-link {
         color: $black;
+        display: block;
         font-weight: $weight-bold;
+        transition: color .1s ease-in-out;
+
+        &:hover {
+            color: $blue;
+        }
     }
 
     &__excerpt {
