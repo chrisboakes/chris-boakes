@@ -5,12 +5,10 @@ slug: blog
 description: Chris Boakes development blog
 ---
 
-<div class="l-blog-grid">
-    {% assign count = 0 %}
-    {% for post in site.posts %}
-        <div class="l-blog-grid__item">
-            {% assign count = count | plus: 1 %}
-            {% include components/c-article-preview.html %}
-        </div>
-    {% endfor %}
+<div class="l-blog-page">
+    <div class="l-blog-page__content">
+        {% for post in site.posts %}
+            {% include components/c-blog-page-preview.html %}
+        {% endfor %}
+    </div>
 </div>
