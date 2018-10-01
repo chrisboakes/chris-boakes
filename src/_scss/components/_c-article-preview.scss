@@ -30,7 +30,7 @@
     }
 
     &__excerpt {
-        line-height: 1.8;
+        @extend .u-body-text;
         margin-bottom: 3rem;
     }
 }

@@ -3,12 +3,14 @@
         position: relative;
 
         &::before {
-            background-color: $yellow;
-            content: '';
-            height: 100%;
-            left: -8.7%;
-            position: absolute;
-            width: 8px;
+            @include breakpoint($medium) {
+                background-color: $yellow;
+                content: '';
+                height: 100%;
+                left: -8.7%;
+                position: absolute;
+                width: 8px;
+            }
         }
     }
 }

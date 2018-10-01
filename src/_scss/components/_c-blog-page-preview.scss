@@ -4,6 +4,10 @@
     padding-top: 5rem;
     position: relative;
 
+    &:nth-child(even) {
+        border-top-color: $blue;
+    }
+
     @include breakpoint($medium) {
         border-top: none;
         padding-top: 0;
