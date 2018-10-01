@@ -1,12 +1,12 @@
 <article class="c-blog-page-preview">
     <header>
-        <h2 class="c-article-preview__title">
-            <a href="{{ post.url }}" class="c-article-preview__title-link">
+        <h2 class="c-blog-page-preview__title">
+            <a href="{{ post.url }}" class="c-blog-page-preview__title-link">
                 {{ post.title }}
             </a>
         </h2>
     </header>
-    <p>{{ post.excerpt }}</p>
+    <p class="c-blog-page-preview__excerpt">{{ post.excerpt }}</p>
     <p class="u-read-more">
         <a href="{{ post.url }}" class="u-action-link u-action-link--animate-hover-right u-action-link--right u-action-link--right-blue">
             Read the article <span class="u-visually-hidden">about {{ post.title }}</span>

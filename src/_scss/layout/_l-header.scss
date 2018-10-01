@@ -28,7 +28,7 @@
     }
 
     &__logo {
-        opacity: 1;
+        opacity: .1;
 
         @include breakpoint($medium) {
             order: 1;
