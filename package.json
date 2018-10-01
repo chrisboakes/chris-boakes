@@ -60,6 +60,7 @@
     "author": "Chris Boakes",
     "license": "ISC",
     "dependencies": {
+        "jump.js": "^1.0.2",
         "prismjs": "^1.15.0"
     }
 }
