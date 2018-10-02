@@ -88,7 +88,7 @@ Save this configuration, navigate to Content, add a new Entry with our new conte
 
 ### SDK Integration & Environment Management
 
-Contentful has a [Javascript SDK](https://github.com/contentful/contentful.js) which is what we'll be using to fetch our post data.
+Contentful has a [JavaScript SDK](https://github.com/contentful/contentful.js) which is what we'll be using to fetch our post data.
 
 * Add this SDK to the project: `yarn add contentful` (or `npm install contentful --save`).
 * Add the [@nuxtjs/dotenv](https://github.com/nuxt-community/dotenv-module) module: `yarn add @nuxtjs/dotenv`. This will help keep our API keys secret.
@@ -382,6 +382,6 @@ If you navigate back to Netlify, you should see your deployment building on the 
 
 You should now have a basic statically generated blog page with dynamic single post routing. I've put all of the code written in this article in this [nuxt-contentful-demo Github repository](https://github.com/chrisboakes/nuxt-contentful-demo). To extend the learnings in this article further I recommend reading the:
 
-* The [Contentful Javascript SDK docs](https://contentful.github.io/contentful.js/contentful/6.1.1/)
+* The [Contentful JavaScript SDK docs](https://contentful.github.io/contentful.js/contentful/6.1.1/)
 * The [Nuxt.js docs](https://nuxtjs.org/guide)
 * [This comprehensive list of serverless services](https://thepowerofserverless.info/services.html)
