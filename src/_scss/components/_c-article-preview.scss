@@ -16,6 +16,10 @@
     &__title {
         font-size: $text-large;
         margin-bottom: 3rem;
+
+        @include breakpoint($medium) {
+            font-size: $text-large-x;
+        }
     }
 
     &__title-link {

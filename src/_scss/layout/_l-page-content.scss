@@ -4,4 +4,12 @@
     @include breakpoint($medium) {
         padding: 10rem 0;
     }
+
+    &--home {
+        padding: 6rem 0;
+
+        @include breakpoint($medium) {
+            padding: 10rem 0;
+        }
+    }
 }
