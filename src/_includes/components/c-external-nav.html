@@ -2,7 +2,7 @@
     <ul class="c-external-nav">
         {% for item in site.data.external-navigation.nav %}
         <li class="c-external-nav__item c-external-nav__item--{{ item.slug }}">
-            <a href="{{ item.url }}" class="c-external-nav__item-link" rel="nofollow" target="_blank">
+            <a href="{{ item.url }}" class="c-external-nav__item-link" rel="nofollow noopener" target="_blank">
                 <span class="c-external-nav__item-text">{{ item.title }}</span>
             </a>
         </li>
