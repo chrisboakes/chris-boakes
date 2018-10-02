@@ -12,7 +12,7 @@
     &__item {
         $this: &;
         font-family: $lato;
-        font-size: $text-regular;
+        font-size: $text-small;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: .1em;
@@ -50,11 +50,13 @@
             &::before {
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
+                background-position: center;
                 content: '';
                 height: 2rem;
                 left: -2.5rem;
                 position: absolute;
-                top: 0;
+                top: 50%;
+                transform: translate(0, -50%);
                 width: 2rem;
             }
         }
