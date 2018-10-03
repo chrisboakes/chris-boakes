@@ -1,0 +1,24 @@
+.c-instagram-image {
+    height: auto;
+
+    &__link {
+        display: block;
+        height: 100%;
+        position: relative;
+        width: 100%;
+
+        &::before {
+            content: '';
+            display: block;
+            padding-top: 100%;
+        }
+    }
+
+    &__image {
+        height: auto;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
