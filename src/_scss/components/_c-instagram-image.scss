@@ -1,9 +1,10 @@
 .c-instagram-image {
-    height: auto;
+    $this: &;
 
     &__link {
         display: block;
         height: 100%;
+        overflow: hidden;
         position: relative;
         width: 100%;
 
@@ -18,7 +19,19 @@
         height: auto;
         left: 0;
         position: absolute;
-        top: 0;
+        top: 50%;
+        transform: translate(0, -50%);
         width: 100%;
+    }
+
+    &--landscape {
+        #{$this}__image {
+            height: 100%;
+            left: 50%;
+            max-width: inherit;
+            top: 0;
+            transform: translate(-50%, 0);
+            width: auto;
+        }
     }
 }

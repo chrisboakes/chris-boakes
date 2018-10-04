@@ -116,8 +116,9 @@ export default class InstagramFeed {
      * @param {Object} item
      */
     itemMarkup(item) {
+        const isPortrait = (item.images.standard_resolution.height > item.images.standard_resolution.width);
         return `
-            <li class="${this.options.rootClass}">
+            <li class="${this.options.rootClass} ${this.options.rootClass}--${isPortrait ? 'portrait' : 'landscape'}">
                 <a href="${item.link}" class="${this.options.rootClass}__link" rel="nofollow noopener" target="_blank">
                     <img src="${item.images.standard_resolution.url}"
                         alt="${item.caption.text}"
