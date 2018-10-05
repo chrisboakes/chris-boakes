@@ -1,3 +1,5 @@
+import helpers from './helpers';
+
 /**
  * A very basic example of retrieving a feed of Instagram posts and appending it to a container
  * @param {String} accessToken - Access token from Instagram <https://www.instagram.com/developer/authentication/>
@@ -126,6 +128,7 @@ export default class InstagramFeed {
                         width="${item.images.standard_resolution.width}"
                         class="${this.options.rootClass}__image"
                     />
+                    <span class="${this.options.rootClass}__caption">${helpers.truncate(item.caption.text, 20)}</span>
                 </a>
             </li>
         `;
