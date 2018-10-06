@@ -10,7 +10,7 @@ layout: default
             {% assign categories = page.categories %}
             {% include components/u-categories.html %}
 
-            {{ content }}
+            {{ content | replace: '<a href="http', '<a rel="nofollow noopener" target="_blank" href="http' }}
         </main>
     </article>
     <div class="l-post__meta-col c-post__meta">
