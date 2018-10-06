@@ -50,6 +50,15 @@
         }
     }
 
+    p, li {
+        code {
+            background-color: $grey-mid;
+            color: $grey-light;
+            display: inline;
+            padding: 0 .5rem;
+        }
+    }
+
     .highlighter-rouge {
         margin-bottom: 2rem;
 

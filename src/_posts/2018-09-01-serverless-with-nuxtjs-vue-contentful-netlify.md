@@ -23,7 +23,7 @@ To get started, you'll need to create an account on:
 
 Make sure you have the [Vue CLI](https://cli.vuejs.org/guide/creating-a-project.html#installation) installed. Run through the installation instructions in the [Nuxt community starter template](https://github.com/nuxt-community/starter-template) README. We'll be using this as the basis for our work. Once you've installed all of your packages, run `yarn dev` and visit [http://localhost:3000](http://localhost:3000) in your browser. You should see something like this:
 
-![Nuxt starter](/assets/img/blog/nuxt-demo-image-1.png)
+![Nuxt Demo Image - Hello World Example](/assets/img/blog/nuxt-demo-hello-world-example-image.png)
 
 ## Structure
 
@@ -51,7 +51,7 @@ You should now have a blank page just containing your site title.
 
 ### Vuex
 
-If you've worked with Vuex before, Nuxt has a slightly different configuration. You can either configure it in [classic mode](https://nuxtjs.org/guide/vuex-store/#classic-mode) or [modules mode](https://nuxtjs.org/guide/vuex-store/#modules-mode). We'll go with the latter. Instead of globally configuring the store, we'll export the state as a function and mutations and actions as objects; Nuxt will take care of the rest. Create a file in the `store` directory called `posts.js`:
+If you've worked with VueX before, Nuxt has a slightly different configuration. You can either configure it in [classic mode](https://nuxtjs.org/guide/vuex-store/#classic-mode) or [modules mode](https://nuxtjs.org/guide/vuex-store/#modules-mode). We'll go with the latter. Instead of globally configuring the store, we'll export the state as a function and mutations & actions as objects; Nuxt will take care of the rest. Create a file in the `store` directory called `posts.js`:
 
 ```js
 export const state = () => ({
@@ -89,7 +89,7 @@ Save this configuration, navigate to Content, add a new Entry with our new conte
 Contentful has a [JavaScript SDK](https://github.com/contentful/contentful.js) which is what we'll be using to fetch our post data.
 
 * Add this SDK to the project: `yarn add contentful` (or `npm install contentful --save`).
-* Add the [@nuxtjs/dotenv](https://github.com/nuxt-community/dotenv-module) module: `yarn add @nuxtjs/dotenv`. This will help keep our API keys secret.
+* Add the [@nuxtjs/dotenv](https://github.com/nuxt-community/dotenv-module) module: `yarn add @nuxtjs/dotenv`. This will help keep our environment keys out of the codebase.
 
 Open `nuxt.config.js` and add the following object to the `module.exports` object:
 
@@ -167,7 +167,7 @@ async getPosts({commit}) {
 
 After the getEntries method we're setting the state's post object to the response of our API and (for now) catching any errors by logging them in the console.
 
-Build your files. If you get the error *\* fs in ./node_modules/dotenv/lib/main.js is not defined*, add the following to your nuxt config in the `extend` method of the build object:
+Build your files. If you get the error `*\* fs in ./node_modules/dotenv/lib/main.js is not defined*`, add the following to your nuxt config in the `extend` method of the build object:
 
 ```js
 config.node = {
@@ -192,12 +192,12 @@ We're looping through the posts array and using the [nuxt-link](https://nuxtjs.o
 
 Visit the site in your browser and you should see something like this:
 
-![Nuxt Demo Image](/assets/img/blog/nuxt-demo-image-2.png)
+![Nuxt Demo Basic Page After Setup & Configuration](/assets/img/blog/nuxt-demo-basic-page-after-setup.png)
 
 
 ## Dynamic routing for our single post view
 
-We need to set up a template for our single post. Because we won't want to create static files for each post we'll need to create a dynamic template to house these posts. Create a new template called `_slug.vue` in the pages directory and add the following code for now:
+We need to set up a template for our single post. Because we won't want to create static files for each post, we'll need to create a dynamic template to house these posts. Create a new template called `_slug.vue` in the pages directory and add the following code for now:
 
 ```html
 <template>
@@ -205,7 +205,7 @@ We need to set up a template for our single post. Because we won't want to creat
 </template>
 ```
 
-Our route will now work but won't display anything. Let's configure this page with Vuex and flow the data down into this template making sure we're inline with [the principle of separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns).
+Our route will now work but won't display anything. Let's configure this page with VueX and flow the data down into this template making sure we're inline with [the principle of separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns).
 
 Create a new store `store/post.js` and structure it in a similar way to our posts:
 
@@ -248,11 +248,11 @@ async getPostBySlug({commit}, slug) {
 }
 ```
 
-Once we've found a match, we'll assign the state's `currentPost` to the first match from our search using the mutation we wrote earlier.
+Once we've found a match, we'll assign the state's `currentPost` variable to the first match from our search using the mutation we wrote earlier.
 
 Now we just need to flow this data down into our `_slug.vue` template.
 
-Firstly, add a script to the bottom of the file to assign our computed `currentPost` & `isLoading` properties and to trigger [Nuxt's fetch method](https://nuxtjs.org/api/pages-fetch/) to call our Vuex action to get the data from Contentful for our post:
+Firstly, add a script to the bottom of the file to assign our computed `currentPost` & `isLoading` properties and to trigger [Nuxt's fetch method](https://nuxtjs.org/api/pages-fetch/) to call our VueX action in which we will get the data from Contentful for our post:
 
 ```html
 <script>
@@ -292,9 +292,9 @@ It's worth reading [Contentful's data model](https://www.contentful.com/develope
 
 Firstly, we have a conditional to check if we're still waiting for data from Contentful and if so, we'll display a loading message. The rest should be self explanatory.
 
-Have a look at it in your browser and you should see content for your single post.
+Have a look at the page in your browser and you should see content for your single post.
 
-If you've added any markdown elements in your content you may notice that they aren't rendered as HTML. You'll need to use a package to do so. Add [@nuxtjs/markdownit](https://github.com/nuxt-community/modules/tree/master/packages/markdownit) `yarn add @nuxtjs/markdownit` and declare it as a module in your nuxt config file (you should now have two modules):
+If you've added any markdown elements in your content, you may notice that they aren't rendered as HTML. You'll need to use a package to do so. Add [@nuxtjs/markdownit](https://github.com/nuxt-community/modules/tree/master/packages/markdownit) `yarn add @nuxtjs/markdownit` and declare it as a module in your nuxt config file (you should now have two modules):
 
 ```js
 modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit'],
@@ -356,13 +356,13 @@ routes: () => {
 }
 ```
 
-We're initialising Contentful and then fetching all entries and mapping the reponse by assigning the post's slug to the route.
+We're initialising Contentful and then fetching all entries and mapping the response by assigning the post's slug to the route.
 
 Run `yarn generate` again and you'll notice Nuxt has created a directory structure of posts containing static files; exactly what we want.
 
 ## Deploying to Netlify
 
-Firstly, make sure you've pushed your project to [Github](https://github.com/) (or GitLab/Bitbucket) and run through steps 1 and 2 of the 'Create a new site' process. When you get to step 3, your build command will be `yarn generate` and your publish directory will be 'dist'. Make sure you click 'Show advanced' and assign the keys and values in your `.env` file here. When you're ready, hit 'Deploy site'.
+Firstly, make sure you've pushed your project to [Github](https://github.com/) (or GitLab/Bitbucket) and then on Netlify run through steps 1 and 2 of the 'Create a new site' process. When you get to step 3, your build command will be `yarn generate` and your publish directory will be 'dist'. Make sure you click 'Show advanced' and assign the keys and values in your `.env` file here. When you're ready, hit 'Deploy site'.
 
 Wait a few minutes while Netlify pulls down the packages it needs to deploy your site and runs the generate command. Once the deployment is successfully complete it will generate a domain for you and you should be able to view your site.
 
@@ -374,7 +374,7 @@ To trigger a change from Contentful we can use [Netlify's build hook](https://ww
 
 In your Contentful admin panel, go to 'Settings', 'Webhooks' and add a new one. Call it something like 'Deploy to Netlify', paste in the build hook URL from Netlify into the URL field. Next, select 'Only Selected Events' under the 'Trigger this webhook for:' option, configure which events you want to trigger a build with and hit save.
 
-If you navigate back to Netlify, you should see your deployment building on the 'Deploys' page in the CMS. Once it's finished you should see **PUBLISHED** status message next to the deployment. Check your Netlify generated URL and you should see your new post.
+If you navigate back to Netlify, you should see your deployment building on the 'Deploys' page. Once it's finished you should see **PUBLISHED** status message next to the deployment. Check your Netlify generated URL and you should see your new post.
 
 ## Wrapping it up
 
