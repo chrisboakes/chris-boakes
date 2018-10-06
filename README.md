@@ -1,6 +1,6 @@
-# Jekyll Starter Repo
+# Chris Boakes Development Blog
 
-A boilerplate for starting a basic [Jekyll](https://jekyllrb.com/) website. Compiled using Jekyll and webpack config from [Laravel Mix](https://github.com/JeffreyWay/laravel-mix).
+My development blog, generated and compiled using [Jekyll](https://jekyllrb.com/) and the webpack config from [Laravel Mix](https://github.com/JeffreyWay/laravel-mix).
 
 ## Setup
 
@@ -40,7 +40,7 @@ This will output an External IP.
 
 *Note*, you should use browser sync at the same time as the above watch command.
 
-## Jekyll Template Structure
+## Template Structure
 
 The `public` directory is rebuilt every time the project is built. You should therefore place no files in this directory.
 
@@ -51,7 +51,7 @@ Create a new `.md` file in `src/_posts`. This will then be compiled using the te
 Create a new 'PAGENAME.html' file in the root of the `src` folder.
 
 ### Categories
-Ensure your post has your categories assigned. When creating a new category, create a file for its hub page in `src/category/CATEGORYNAME.md`, this should contain the category name and reference the layout file like so (for the category 'test'):
+Ensure the post has the categories assigned. When creating a new category, create a file for its hub page in `src/category/CATEGORYNAME.md`, this should contain the category name and reference the layout file like so (for the category 'test'):
 
 ```html
 ---
