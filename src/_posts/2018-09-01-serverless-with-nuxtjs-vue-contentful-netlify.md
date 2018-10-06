@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Static and serverless with Nuxt.js, Vuex, Contentful, Netlify"
+title:  "Static and serverless with Nuxt.js, Vue.js, Vuex, Contentful, Netlify"
 date:   2018-09-01 09:28:59
 categories: ['serverless', 'javascript', 'vuejs', 'contentful', 'netlify']
 excerpt: "I'm a big fan of Vue.js and Vuex for state management. Combine this with Nuxt and you can generate a static version of your Vue application and give your users a speedy site served from HTML files."
@@ -51,7 +51,7 @@ You should now have a blank page just containing your site title.
 
 ### Vuex
 
-If you've worked with VueX before, Nuxt has a slightly different configuration. You can either configure it in [classic mode](https://nuxtjs.org/guide/vuex-store/#classic-mode) or [modules mode](https://nuxtjs.org/guide/vuex-store/#modules-mode). We'll go with the latter. Instead of globally configuring the store, we'll export the state as a function and mutations & actions as objects; Nuxt will take care of the rest. Create a file in the `store` directory called `posts.js`:
+If you've worked with Vuex before, Nuxt has a slightly different configuration. You can either configure it in [classic mode](https://nuxtjs.org/guide/vuex-store/#classic-mode) or [modules mode](https://nuxtjs.org/guide/vuex-store/#modules-mode). We'll go with the latter. Instead of globally configuring the store, we'll export the state as a function and mutations & actions as objects; Nuxt will take care of the rest. Create a file in the `store` directory called `posts.js`:
 
 ```js
 export const state = () => ({
@@ -135,7 +135,7 @@ export default {
 </script>
 ```
 
-*Notice how we don't need to import our Vuex state? Thanks Nuxt.*
+*Notice how we don't need to import our Vue state? Thanks Nuxt.*
 
 Next, add a new method in `store/posts.js`:
 
@@ -205,7 +205,7 @@ We need to set up a template for our single post. Because we won't want to creat
 </template>
 ```
 
-Our route will now work but won't display anything. Let's configure this page with VueX and flow the data down into this template making sure we're inline with [the principle of separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns).
+Our route will now work but won't display anything. Let's configure this page with Vue and flow the data down into this template making sure we're inline with [the principle of separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns).
 
 Create a new store `store/post.js` and structure it in a similar way to our posts:
 
@@ -252,7 +252,7 @@ Once we've found a match, we'll assign the state's `currentPost` variable to the
 
 Now we just need to flow this data down into our `_slug.vue` template.
 
-Firstly, add a script to the bottom of the file to assign our computed `currentPost` & `isLoading` properties and to trigger [Nuxt's fetch method](https://nuxtjs.org/api/pages-fetch/) to call our VueX action in which we will get the data from Contentful for our post:
+Firstly, add a script to the bottom of the file to assign our computed `currentPost` & `isLoading` properties and to trigger [Nuxt's fetch method](https://nuxtjs.org/api/pages-fetch/) to call our Vue action in which we will get the data from Contentful for our post:
 
 ```html
 <script>
