@@ -2,7 +2,12 @@
     <ul class="c-site-nav">
         {% for item in site.data.navigation.nav %}
             <li class="c-site-nav__item c-site-nav__item--{{ item.slug }}">
-                <a href="{{ item.url }}" class="c-site-nav__item-link">{{ item.title }}</a>
+                <a href="{{ item.url }}" class="c-site-nav__item-link">
+                    {% if page.title == item.title %}
+                        <span class="u-visually-hidden">Current Page: </span>
+                    {% endif %}
+                    {{ item.title }}
+                </a>
             </li>
         {% endfor %}
     </ul>
