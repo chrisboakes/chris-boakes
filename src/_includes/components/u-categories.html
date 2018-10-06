@@ -3,7 +3,7 @@
     <ul class="u-categories__list">
         {% for category in categories %}
            <li class="u-categories__item">
-               <a href="/category/{{ category | downcase }}">
+               <a class="u-categories__item-link" href="/category/{{ category | downcase }}">
                    {{ category }}
                </a>
            </li>
