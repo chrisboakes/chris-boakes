@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Improving Accessibility On Your Web Application"
+description: "A look into accessibility and how you can start implementing it on a practical level"
 date:   2018-06-19 09:28:59
 category: accessibility
 excerpt: "Advancing my knowledge around the topic of accessibility has been something I've been doing a lot recently. With this knowledge came the realisation that previous web applications I'd worked on could do with some improvements in this field. However there are a few quick wins which could fundamentally improve the accessibility of your web application post-build."

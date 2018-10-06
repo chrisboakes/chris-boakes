@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Working with the Payment Request API"
+description: "Tutorial and basic implementation the Payment Request API"
 date:   2018-07-29 09:28:59
 categories: ['payment-request-api', 'javascript']
 excerpt: "One of things that irks me about the usability of shopping online is the inconsistent checkout experience between different merchants. Do I really need to enter the same delivery/billing address, card number, CVC code etc. into every websites specific form? Enter the Payment Request API."

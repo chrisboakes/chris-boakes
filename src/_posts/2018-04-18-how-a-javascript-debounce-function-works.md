@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Understanding how a JavaScript ES6 debounce function works"
+description: "A look into how debouncing actually works"
 excerpt: "I was asked recently how debouncing works in JavaScript. I knew why I should use it, what it did and that the ES6 helper function I'd been using was short and easy to read through. However I didn't grasp what was going on 'under the hood'."
 date:   2018-04-18 09:28:59
 categories: ['debounce', 'javascript']

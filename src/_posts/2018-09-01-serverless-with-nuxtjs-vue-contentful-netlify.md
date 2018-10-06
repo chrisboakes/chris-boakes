@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Static and serverless with Nuxt.js, Vue.js, Vuex, Contentful, Netlify"
+title:  "Static and serverless with Vue.js, Nuxt.js, Vuex, Contentful, Netlify"
+description: "Tutorial on creating a statically generated website with dynamic content using Vue.js, Nuxt.js, Vuex, Contentful and Netlify"
 date:   2018-09-01 09:28:59
 categories: ['serverless', 'javascript', 'vuejs', 'contentful', 'netlify']
 excerpt: "I'm a big fan of Vue.js and Vuex for state management. Combine this with Nuxt and you can generate a static version of your Vue application and give your users a speedy site served from HTML files."
