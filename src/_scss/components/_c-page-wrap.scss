@@ -1,0 +1,14 @@
+.c-page-wrap {
+    width: 100%;
+
+    @include breakpoint($small) {
+        border: $grey-lighter solid 2rem;
+    }
+
+    body.theme-yellow & {
+        @include breakpoint($small) {
+            border-color: $white;
+            border-top: 0;
+        }
+    }
+}

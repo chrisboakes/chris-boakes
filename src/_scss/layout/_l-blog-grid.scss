@@ -1,0 +1,45 @@
+.l-blog-grid {
+    @include breakpoint($medium) {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        margin: 0 auto;
+        max-width: 1000px;
+        width: 100%;
+    }
+
+    &__item {
+        margin: 0 auto;
+        max-width: 40rem;
+        margin-bottom: 6rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include breakpoint($medium) {
+            max-width: inherit;
+            margin-bottom: 10rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:nth-child(1),
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(8) {
+                grid-column: 4/10;
+            }
+
+            &:nth-child(2),
+            &:nth-child(6) {
+                grid-column: 1/6;
+            }
+
+            &:nth-child(3),
+            &:nth-child(7) {
+                grid-column: 8/13;
+            }
+        }
+    }
+}

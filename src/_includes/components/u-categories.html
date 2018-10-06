@@ -1,0 +1,12 @@
+<aside class="u-categories">
+    <p class="u-categories__description">Topics:</p>
+    <ul class="u-categories__list">
+        {% for category in categories %}
+           <li class="u-categories__item">
+               <a class="u-categories__item-link" href="/category/{{ category | downcase }}">
+                   {{ category }}
+               </a>
+           </li>
+        {% endfor %}
+    </ul>
+</aside>

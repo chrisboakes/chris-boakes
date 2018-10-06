@@ -1,0 +1,10 @@
+.u-category-title {
+    font-size: $text-medium-large;
+    font-weight: $weight-bold;
+    margin-bottom: 4rem;
+
+    @include breakpoint($medium) {
+        color: $blue;
+        font-size: $text-large;
+    }
+}

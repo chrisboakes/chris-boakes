@@ -1,3 +1,21 @@
 .l-footer {
+    padding: 4rem 0;
 
+    @include breakpoint($medium) {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__copyright {
+        text-align: center;
+
+        @include breakpoint($medium) {
+            text-align: left;
+        }
+    }
+
+    &__links {
+
+    }
 }

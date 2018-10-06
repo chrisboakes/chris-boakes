@@ -1,0 +1,91 @@
+.c-instagram-image {
+    $this: &;
+
+    &__link {
+        display: block;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+
+        &::before {
+            content: '';
+            display: block;
+            padding-top: 100%;
+        }
+
+        &::after {
+            background-color: $blue;
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            transition: opacity .2s ease-in-out;
+            width: 100%;
+            z-index: 1;
+        }
+
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+
+            #{$this}__caption {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__caption {
+        color: $white;
+        font-family: $lato;
+        font-size: $text-small;
+        left: 10%;
+        opacity: 0;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translate(0, -50%);
+        transition: opacity .2s ease-in-out;
+        width: 80%;
+        z-index: 2;
+
+        &::before {
+            $url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#{$white}" d="M352 0H160C71.648 0 0 71.648 0 160v192c0 88.352 71.648 160 160 160h192c88.352 0 160-71.648 160-160V160C512 71.648 440.352 0 352 0zm112 352c0 61.76-50.24 112-112 112H160c-61.76 0-112-50.24-112-112V160C48 98.24 98.24 48 160 48h192c61.76 0 112 50.24 112 112v192z"/><path fill="#{$white}" d="M256 128c-70.688 0-128 57.312-128 128s57.312 128 128 128 128-57.312 128-128-57.312-128-128-128zm0 208c-44.096 0-80-35.904-80-80 0-44.128 35.904-80 80-80s80 35.872 80 80c0 44.096-35.904 80-80 80z"/><circle fill="#{$white}" cx="393.6" cy="118.4" r="17.056"/></svg>';
+            background-image: url('data:image/svg+xml, #{$url}');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            content: '';
+            display: block;
+            height: 2rem;
+            margin: 0 auto 1rem;
+            width: 2rem;
+        }
+    }
+
+    &__image {
+        filter: grayscale(100%);
+        height: auto;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 100%;
+    }
+
+    &--landscape {
+        #{$this}__image {
+            height: 100%;
+            left: 50%;
+            max-width: inherit;
+            top: 0;
+            transform: translate(-50%, 0);
+            width: auto;
+        }
+    }
+}

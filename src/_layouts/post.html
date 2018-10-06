@@ -1,6 +1,29 @@
 ---
 layout: default
 ---
-<h2>Post</h2>
 
-{{ content }}
+<div class="l-post c-post">
+    <article class="l-post__content-col s-content">
+        <main>
+            <h1>{{ page.title }}</h1>
+
+            {% assign categories = page.categories %}
+            {% include components/u-categories.html %}
+
+            {{ content | replace: '<a href="http', '<a rel="nofollow noopener" target="_blank" href="http' }}
+        </main>
+    </article>
+    <div class="l-post__meta-col c-post__meta">
+        <div class="c-post__meta-inner">
+            <div class="c-post__meta-image-wrap">
+                <img src="/assets/img/chris-boakes-web-developer.jpg" alt="A headshot of Chris Boakes" class="c-post__meta-image">
+            </div>
+            <div class="c-post__meta-text">
+                {% assign blogBio = site.bios | where: "slug", "blog" %}
+                {% for bio in blogBio %}
+                    {{ bio | markdownify }}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+.c-blog-page-preview {
+    border-top: $yellow solid 8px;
+    margin-bottom: 5rem;
+    padding-top: 5rem;
+    position: relative;
+
+    &:nth-child(even) {
+        border-top-color: $blue;
+    }
+
+    @include breakpoint($medium) {
+        border-top: none;
+        padding-top: 0;
+
+        &::before {
+            background-color: $yellow;
+            content: '';
+            height: 100%;
+            left: -8.7%;
+            position: absolute;
+            width: 8px;
+        }
+
+        &:nth-child(even) {
+            &::before {
+                background-color: $blue;
+            }
+        }
+    }
+
+    &__title {
+        @extend .c-article-preview__title;
+
+        @include breakpoint($medium) {
+            font-size: $text-xlarge;
+        }
+    }
+
+    &__title-link {
+        @extend .c-article-preview__title-link;
+    }
+
+    &__excerpt {
+        @extend .c-article-preview__excerpt;
+    }
+}

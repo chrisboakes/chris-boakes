@@ -1,0 +1,40 @@
+.c-article-preview {
+    border-top: $yellow solid 8px;
+    padding-top: 5rem;
+
+    &--blue {
+        border-top: $blue solid 8px;
+    }
+
+    &__inner {
+        @include breakpoint($large) {
+            padding: 0 5rem;
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-size: $text-large;
+        margin-bottom: 3rem;
+
+        @include breakpoint($medium) {
+            font-size: $text-large-x;
+        }
+    }
+
+    &__title-link {
+        color: $black;
+        display: block;
+        font-weight: $weight-bold;
+        transition: color .1s ease-in-out;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    &__excerpt {
+        @extend .u-body-text;
+        margin-bottom: 3rem;
+    }
+}

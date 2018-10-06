@@ -1,0 +1,13 @@
+nav:
+
+- title: Home
+  slug: home
+  url: /
+
+- title: About
+  slug: about
+  url: /about
+
+- title: Blog
+  slug: blog
+  url: /blog

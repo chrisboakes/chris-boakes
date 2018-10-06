@@ -1,3 +1,127 @@
 .l-header {
+    $this: &;
+    background-color: $white;
+    position: relative;
+    width: 100%;
+    z-index: 2;
 
+    @include breakpoint($medium) {
+        border-bottom: 2rem solid $grey-lighter;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 2rem 0;
+        width: 100%;
+
+        @include breakpoint($medium) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;
+            padding: 3rem 0;
+        }
+
+        @include breakpoint($large) {
+            grid-template-columns: 3fr 9fr;
+            grid-template-rows: 1fr;
+        }
+    }
+
+    &__logo {
+        @include breakpoint($medium) {
+            order: 1;
+            width: 100%;
+        }
+    }
+
+    &__menu-button {
+        align-self: center;
+        justify-self: end;
+        position: relative;
+        z-index: 10;
+
+        @include breakpoint($medium) {
+            display: none;
+        }
+    }
+
+    &__nav-wrap {
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        transform: translateZ(0);
+        transition: opacity .4s, visibility .4s;
+        visibility: hidden;
+        width: 100%;
+        z-index: 5;
+
+        .body--menu-is-expanded & {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @include breakpoint($medium) {
+            align-items: end;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: inherit;
+            left: inherit;
+            margin-top: 1rem;
+            opacity: 1;
+            order: 2;
+            position: relative;
+            visibility: visible;
+            width: 100%;
+        }
+
+        @include breakpoint($large) {
+            align-items: center;
+            justify-items: end;
+            margin-top: 0;
+        }
+    }
+
+    &__site-nav {
+        position: relative;
+        top: 50%;
+        transform: translate(0, -50%);
+
+        @include breakpoint($medium) {
+            top: inherit;
+            transform: translate(0, 0);
+        }
+    }
+
+    &__external-nav {
+        bottom: 2rem;
+        position: absolute;
+        width: 100%;
+
+        @include breakpoint($medium) {
+            bottom: inherit;
+            position: relative;
+            top: -6rem;
+            width: auto;
+        }
+
+        @include breakpoint($large) {
+            top: inherit;
+        }
+    }
+
+    body.theme-yellow & {
+        background-color: $yellow;
+        border-bottom-color: transparent;
+
+        @include breakpoint($medium) {
+            background-color: inherit;
+            border-bottom-color: transparent;
+            left: 2rem;
+            position: absolute;
+            top: 2rem;
+            width: calc(100% - 4rem);
+        }
+    }
 }

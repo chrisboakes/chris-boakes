@@ -1,0 +1,45 @@
+.u-categories {
+    display: flex;
+
+    &__description {
+        font-style: italic;
+        font-weight: $weight-bold;
+        padding-right: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    &__list {
+        display: inline-block;
+        list-style: none !important;
+        margin-bottom: 2rem;
+        margin-left: 0 !important;
+    }
+
+    &__item {
+        display: inline-block;
+        font-style: italic;
+        margin-right: .2rem;
+
+        &::after {
+            content: ',';
+        }
+
+        &:last-child {
+            &::after {
+                content: '';
+            }
+        }
+
+        &-link {
+            color: $blue;
+            font-weight: $weight-bold;
+            text-decoration: underline;
+
+            &:hover {
+                background-color: $blue;
+                color: $white;
+                text-decoration: none;
+            }
+        }
+    }
+}

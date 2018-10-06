@@ -1,0 +1,19 @@
+<article class="c-blog-page-preview">
+    <header>
+        <h2 class="c-blog-page-preview__title">
+            <a href="{{ post.url }}" class="c-blog-page-preview__title-link">
+                {{ post.title }}
+            </a>
+        </h2>
+    </header>
+
+    {% assign categories = post.categories %}
+    {% include components/u-categories.html %}
+
+    <p class="c-blog-page-preview__excerpt">{{ post.excerpt }}</p>
+    <p class="u-read-more">
+        <a href="{{ post.url }}" class="u-action-link u-action-link--animate-hover-right u-action-link--right u-action-link--right-blue">
+            Read the article <span class="u-visually-hidden">about {{ post.title }}</span>
+        </a>
+    </p>
+</article>

@@ -1,7 +1,7 @@
 title: Chris Boakes
 email: chris@chrisboakes.com
 description: > # this means to ignore newlines until "baseurl:"
-  The description of my website
+  Code and development blog of London based front-end web developer Chris Boakes
 baseurl: "" # the subpath of your site, e.g. /blog
 
 # Build settings
@@ -10,10 +10,12 @@ source: src
 destination: public
 
 # Links
-permalink: /:categories/:title/
+permalink: /:title/
 collections:
     category:
         output: true
+    bios:
+        output: false
 defaults:
   -
     scope:

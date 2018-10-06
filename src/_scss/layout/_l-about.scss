@@ -1,0 +1,16 @@
+.l-about {
+    @include breakpoint($medium) {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    &__content {
+        @include breakpoint($medium) {
+            grid-column: 4/-1;
+        }
+
+        @include breakpoint($large) {
+            grid-column: 4/12;
+        }
+    }
+}

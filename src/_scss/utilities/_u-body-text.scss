@@ -1,0 +1,8 @@
+.u-body-text {
+    font-size: $text-medium;
+    line-height: 1.5;
+
+    &--small {
+        font-size: $text-regular;
+    }
+}

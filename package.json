@@ -1,5 +1,5 @@
 {
-    "name": "Chris Boakes",
+    "name": "chris-boakes",
     "version": "1.0.0",
     "description": "",
     "devDependencies": {
@@ -58,5 +58,9 @@
         "mapCoverage": true
     },
     "author": "Chris Boakes",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "jump.js": "^1.0.2",
+        "prismjs": "^1.15.0"
+    }
 }

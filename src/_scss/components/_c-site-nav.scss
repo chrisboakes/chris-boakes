@@ -1,0 +1,72 @@
+$pages: 'home' 'about' 'blog';
+
+.c-site-nav {
+    $this: &;
+
+    @include breakpoint($medium) {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__item {
+        font-family: $lato;
+        font-size: $text-regular;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        margin-bottom: 1.5rem;
+        padding-right: 2rem;
+        position: relative;
+
+        &::after {
+            @include breakpoint($medium) {
+                color: $blue;
+                content: '/';
+                font-weight: $weight-bold;
+                font-size: $text-medium;
+                position: absolute;
+                right: 0;
+                top: -.3rem;
+            }
+        }
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+
+        @include breakpoint($medium) {
+            margin-bottom: 0;
+            margin-right: 1rem;
+        }
+
+        &-link {
+            color: $grey-darker;
+
+            &:hover {
+                color: $blue;
+            }
+        }
+
+        @each $page in $pages {
+            &--#{$page} {
+                .page-#{$page} & {
+                    #{$this}__item-link {
+                        color: $blue;
+                    }
+                }
+            }
+        }
+    }
+
+    body.theme-yellow & {
+        #{$this}__item-link {
+            color: $white;
+
+            &:hover {
+                border-bottom: 2px solid $white;
+            }
+        }
+    }
+}

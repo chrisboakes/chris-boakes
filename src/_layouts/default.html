@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
     {% include head.html %}
-    <body class="{% if page.slug %}page-{{ page.slug }}{% endif %}">
-        {% include header.html %}
-        {{ content }}
-        {% include footer.html %}
+    <body class="{% if page.slug %}page-{{ page.slug }}{% endif %}{% if page.slug == 'home' %} theme-yellow{% endif %}">
+        <div class="c-page-wrap">
+            {% include header.html %}
+            <div class="u-horizontal-center">
+                <div class="l-page-content">
+                    {{ content }}
+                </div>
+            </div>
+            {% include footer.html %}
+        </div>
     </body>
 </html>

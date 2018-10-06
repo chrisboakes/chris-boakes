@@ -1,0 +1,61 @@
+.c-home {
+    &__intro {
+        background-color: $yellow;
+
+        &-title {
+            color: $white;
+            font-size: 8rem;
+            font-weight: $weight-bold;
+
+            @include breakpoint($medium) {
+                font-size: 12rem;
+            }
+
+            @include breakpoint($large) {
+                font-size: 14.4rem;
+            }
+        }
+
+        &-section-center {
+            display: flex;
+            height: 230px;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+
+            @include breakpoint($medium) {
+                height: 250px;
+            }
+
+            @include breakpoint($large) {
+                height: 361px;
+            }
+        }
+
+        &-meta {
+            height: 9.5rem;
+        }
+
+        &-link-item {
+            margin-bottom: 1rem;
+
+            &-link {
+                color: $white;
+                font-weight: $weight-bold;
+            }
+        }
+    }
+
+    &__profile-img {
+        border-radius: 50%;
+        height: 15rem;
+        margin: 0 auto;
+        margin-top: 2rem;
+        width: 15rem;
+
+        @include breakpoint($medium) {
+            height: 20rem;
+            width: 20rem;
+        }
+    }
+}

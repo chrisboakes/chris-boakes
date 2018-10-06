@@ -1,0 +1,11 @@
+.l-instagram-feed {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    padding-top: 2rem;
+
+    @include breakpoint($small) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

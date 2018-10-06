@@ -1,0 +1,15 @@
+.c-nav {
+    background-color: $white;
+
+    @include breakpoint($medium) {
+        background-color: inherit;
+    }
+
+    body.theme-yellow & {
+        background-color: $yellow;
+
+        @include breakpoint($medium) {
+            background-color: inherit;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+---
+layout: default
+title: About
+slug: about
+description: A little bit of information about Chris Boakes, a front-end developer based in London, England
+---
+
+<div class="l-about c-about">
+    <div class="l-about__content c-about__content-wrap">
+        <div class="s-content">
+            <h1>Hello</h1>
+
+            {% assign aboutBio = site.bios | where: "slug", "about" %}
+            {% for bio in aboutBio %}
+                {{ bio | markdownify }}
+            {% endfor %}
+        </div>
+
+        <ul id="instagram-feed" class="l-instagram-feed"></ul>
+    </div>
+</div>

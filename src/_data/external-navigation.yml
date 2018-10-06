@@ -1,0 +1,13 @@
+nav:
+
+- title: Github
+  slug: github
+  url: https://github.com/chrisboakes
+
+- title: NPM
+  slug: npm
+  url: https://www.npmjs.com/~chrisboakes
+
+- title: Gist
+  slug: gist
+  url: https://gist.github.com/chrisboakes
