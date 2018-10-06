@@ -10,15 +10,15 @@ One of things that irks me about the usability of shopping online is the inconsi
 
 ## What is the Payment Request API?
 
-The Payment Request API is a ['W3C Candidate Recommendation'](https://www.w3.org/TR/payment-request/) for a consistent checkout experience by standardising the checkout proceedure. It's there to act as an intermediary between users, sellers and payment methods. It works cross browser and replaces the traditional checkout model by allowing merchants to accept payments with a single API call. It also has a consistent UI. Basically, it makes the checkout proceedure much easier.
+The Payment Request API is a ['W3C Candidate Recommendation'](https://www.w3.org/TR/payment-request/) for a consistent checkout experience by standardising the checkout procedure. It's there to act as an intermediary between users, sellers and payment methods. It works cross browser and replaces the traditional checkout model by allowing merchants to accept payments with a single API call. It also has a consistent UI. Basically, it makes the checkout procedure much easier.
 
 Here's how the modal looks in Chrome:
 
-![Payment Request Modal](/assets/img/blog/payment-request-api-example.jpg)
+![Payment Request Modal In Google Chrome](/assets/img/blog/payment-request-api-example.jpg)
 
 ## Using the Payment Request API
 
-[It's supported in Chrome, Safari and Edge](https://caniuse.com/#feat=payment-request) but annoyingly is not on by default in Firefox (even though it's supported). Therefore we'll need to check if the browser supports it which can easily be done:
+[It's supported in Chrome, Safari and Edge](https://caniuse.com/#feat=payment-request) but annoyingly is not switched on by default in Firefox (even though it's supported). Therefore we'll need to check if the browser supports it which can easily be done:
 
 ```js
 if (window.PaymentRequest) {
@@ -36,7 +36,7 @@ const supportedPaymentMethods = [{
 }]
 ```
 
-Now let's some dummy checkout details:
+Now let's add some dummy checkout details:
 
 ```js
 const checkoutDetails = {
@@ -101,7 +101,7 @@ makePayment() {
 }
 ```
 
-Firstly we check to see if the browser can make the payment, if not we'll throw an error (feel free to handle this gracefully). If it can we'll initiate the browser's payment modal and bind a promise to it. If all was successful we'll call a method to send our payment.
+Firstly we check to see if the browser can make the payment, if not we'll throw an error (feel free to handle this gracefully). If it can, we'll initiate the browser's payment modal and bind a promise to it. If all was successful we'll call a method to send our payment.
 
 ```js
 sendPayment(paymentResponse) {
@@ -117,10 +117,10 @@ Now all we need to do is bind this functionality to something which, for the pur
 <button class="js-pay">Pay For Something</button>
 ```
 
-Let's create a method to call in the aforementioned conditional:
+Let's create a method to initialise our click event:
 
 ```js
-setPayment() {
+initPayment() {
 	document.querySelector('.js-pay').onclick = (e) => {
 		e.preventDefault()
 		makePayment()
@@ -131,9 +131,9 @@ setPayment() {
 And now let's call this method after we've assigned the `PaymentRequest` to a variable:
 
 ```js
-setPayment();
+initPayment();
 ```
 
 ## Conclusion
 
-You can find all of the [code from this demo on my Codepen](https://codepen.io/chrisboakes/pen/ajBzbb). This is a very basic implementation. You can [read more about the proposed spec here](https://www.w3.org/TR/payment-request/) and there's a comprehensive Google deepdive which you can [read here](https://developers.google.com/web/fundamentals/payments/deep-dive-into-payment-request).
+You can find all of the [code from this demo on my Codepen](https://codepen.io/chrisboakes/pen/ajBzbb). This is a very basic implementation. You can [read more about the proposed spec here](https://www.w3.org/TR/payment-request/) and there's a comprehensive [Google deep dive which you can read here](https://developers.google.com/web/fundamentals/payments/deep-dive-into-payment-request).
