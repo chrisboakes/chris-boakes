@@ -2,8 +2,12 @@
 layout: default
 ---
 
-<h1>Category: {{ page.category }}</h1>
+<div class="l-blog-page">
+    <div class="l-blog-page__content">
+        <h1 class="u-category-title">Category: {{ page.title }}</h1>
 
-{% for post in site.categories[page.category] %}
-    <p>{{ post.title }}</p>
-{% endfor %}
+        {% for post in site.categories[page.category] %}
+            {% include components/c-blog-page-preview.html %}
+        {% endfor %}
+    </div>
+</div>

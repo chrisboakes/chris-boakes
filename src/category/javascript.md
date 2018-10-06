@@ -1,5 +1,5 @@
 ---
 category: javascript
 layout: category
-title: Javascript
+title: JavaScript
 ---

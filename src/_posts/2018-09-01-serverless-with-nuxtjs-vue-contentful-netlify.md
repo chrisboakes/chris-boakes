@@ -6,8 +6,6 @@ categories: ['serverless', 'javascript', 'vuejs', 'contentful', 'netlify']
 excerpt: "I'm a big fan of Vue.js and Vuex for state management. Combine this with Nuxt and you can generate a static version of your Vue application and give your users a speedy site served from HTML files."
 ---
 
-# Static and serverless with Nuxt.js, Vuex, Contentful, Netlify
-
 As a front-end developer, the rise of static site generators combined with serverless architecture is an extremely appealing way to work. While not suited to every purpose, there are a lot of reasons to love statically served sites. It can take the hassle out of managing/maintaining server infrastructure and can provide a speedy way to serve your page because you're serving pre-rendered HTML instead of waiting for your database or API to return data. As a front-end developer do you really want to spend your time configuring how your server sends mail? Probably not. There are plenty of [services](https://thepowerofserverless.info/services.html) and APIs that can help take care of this for you.
 
 I'm a big fan of [Vue.js](https://vuejs.org/) and [Vuex](https://vuex.vuejs.org/) for state management. Combine this with [Nuxt](https://nuxtjs.org/) and you can generate a static version of your Vue application and give your users a speedy site served from HTML files.
