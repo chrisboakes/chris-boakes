@@ -4,7 +4,7 @@ title:  "Working with the Payment Request API"
 description: "Tutorial and basic implementation the Payment Request API"
 date:   2018-07-29 09:28:59
 categories: ['payment-request-api', 'javascript']
-excerpt: "One of things that irks me about the usability of shopping online is the inconsistent checkout experience between different merchants. Do I really need to enter the same delivery/billing address, card number, CVC code etc. into every websites specific form? Enter the Payment Request API."
+excerpt: "One of things that irks me about the usability of shopping online is the inconsistent checkout experience between different merchants. Do I really need to enter the same delivery/billing address, card number, CVC code etc. into every websites specific form? Payment Request API to the rescue."
 ---
 
 One of things that irks me about the usability of shopping online is the inconsistent checkout experience between different merchants. Do I really need to enter the same delivery/billing address, card number, CVC code etc. into every websites specific form? Sure, browsers have an autofill feature to help but forms themselves can be structured differently and I find myself having to correct these details a lot of the time. Plus if I have to go through this experience on my mobile device it can be even more frustrating due to slow connections and poor responsive UX.
