@@ -238,13 +238,12 @@ Let's add an asynchronous method to our actions object to get data for our page 
 ```js
 async getPostBySlug({commit}, slug) {
 	commit('setLoading', true);
-	await client.getEntries({
+    const response = await client.getEntries({
 		content_type: 'blogPost',
 		'fields.slug': slug
-	}).then((response) => {
-		commit('setCurrentPost', response.items[0]);
-		commit('setLoading', false);
-    }).catch(console.error);
+	})
+    commit('setCurrentPost', response.items[0])
+    commit('setLoading', false)
 }
 ```
 
