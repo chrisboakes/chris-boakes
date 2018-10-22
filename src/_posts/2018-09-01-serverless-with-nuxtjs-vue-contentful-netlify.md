@@ -156,13 +156,12 @@ Now use [Contentful's getEntries method](https://contentful.github.io/contentful
 
 ```js
 async getPosts({commit}) {
-    await client.getEntries({
+    const response = await client.getEntries({
         content_type: 'blogPost'
-    }).then((response) => {
-	    if (response.items.length > 0) {
-        	commit('setPosts', response.items)
-        }
-    }).catch(console.error)
+    })
+    if (response.items.length > 0) {
+        commit('setPosts', response.items)
+    }
 }
 ```
 
