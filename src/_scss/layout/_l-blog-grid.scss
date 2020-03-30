@@ -2,6 +2,7 @@
     @include breakpoint($medium) {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
+        grid-gap: 16px;
         margin: 0 auto;
         max-width: 1000px;
         width: 100%;
@@ -24,22 +25,7 @@
                 margin-bottom: 0;
             }
 
-            &:nth-child(1),
-            &:nth-child(4),
-            &:nth-child(5),
-            &:nth-child(8) {
-                grid-column: 4/10;
-            }
-
-            &:nth-child(2),
-            &:nth-child(6) {
-                grid-column: 1/6;
-            }
-
-            &:nth-child(3),
-            &:nth-child(7) {
-                grid-column: 8/13;
-            }
+            grid-column: span 6;
         }
     }
 }
