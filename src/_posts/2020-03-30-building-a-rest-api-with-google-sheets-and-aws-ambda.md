@@ -2,7 +2,7 @@
 layout: post
 title:  "Building a REST API from Google Sheets with AWS Lambda and API Gateway"
 description: "Tutorial on building a REST API using the Google Developer API, AWS Lambda and AWS Gateway"
-date:   2018-09-01 09:28:59
+date:   2020-03-30 13:05:00
 categories: ['serverless', 'node', 'aws', 'lambda', 'api']
 excerpt: "I came across a community group who had been managing a Google sheet to detail data about which local businesses are delivering during the Coronavirus crisis. I used this sheet as a backend for an API I built using Lambda and API Gateway."
 ---
@@ -11,7 +11,7 @@ I recently came across a [Facebook group](http://www.brightonquarantine.co.uk/) 
 
 This was the result: [brightonquarantine.co.uk](http://www.brightonquarantine.co.uk/)
 
-This article is a guide to build the API used by the front-end of the website.
+This article is a guide to build the API used by the front-end of the website. All of the code can be found in [this repository](https://github.com/chrisboakes/google-sheets-lambda).
 
 ### Prequisites
 
@@ -69,20 +69,31 @@ In `index.js` paste the following (including the string of the spreadsheet ID wh
 ```js
 // Get spreadsheet npm package
 const { GoogleSpreadsheet } = require('google-spreadsheet');
-// Paste the spreadsheet ID
-const sheet = new GoogleSpreadsheet();
+// Ensure you've updated this file with your client secret
+const clientSecret = require('./client_secret.json');
+
+// Add your Google sheet ID here
+const googleSheetID = '';
+
+// Instantiates the spreadsheet
+const sheet = new GoogleSpreadsheet(googleSheetID);
 
 // Asynchronously get the data
 async function getData() {
-	// Authenticate using the JSON file we set up earlier
-   await sheet.useServiceAccountAuth(require('./client_secret.json'));
-   await sheet.loadInfo();
-	
-	// Get the first tab's data
-   const tab = sheet.sheetsByIndex[0];
-	
-	// Log out the title
-   console.log(tab.title);
+    try {
+        // Authenticate using the JSON file we set up earlier
+        await sheet.useServiceAccountAuth(clientSecret);
+        await sheet.loadInfo();
+
+        // Get the first tab's data
+        const tab = sheet.sheetsByIndex[0];
+
+        console.log(tab.title);
+
+    } catch(err) {
+        console.log(err);
+        return false;
+    }
 }
 
 // Call the above method
@@ -104,37 +115,43 @@ We're now going to fetch some row data. Replace the `getData` method with this o
 ```js
 // Asynchronously get the data
 async function getData() {
-    // Authenticate using the JSON file we set up earlier
-    await sheet.useServiceAccountAuth(require('./client_secret.json'));
-    await sheet.loadInfo();
+    try {
+        // Authenticate using the JSON file we set up earlier
+        await sheet.useServiceAccountAuth(clientSecret);
+        await sheet.loadInfo();
 
-    // Get the first tab's data
-    const tab = sheet.sheetsByIndex[0];
+        // Get the first tab's data
+        const tab = sheet.sheetsByIndex[0];
 
-    // Get row data
-    const rows = await tab.getRows();
+        // Get row data
+        const rows = await tab.getRows();
 
-    // Empty array for our data
-    let data = [];
+        // Empty array for our data
+        let data = [];
 
-    // If we have data
-    if (rows.length > 0) {
-        // Iterate through the array
-        // and push the data from the 'Name' column
-        // of your spreadsheet
-        rows.forEach(row => {
-            data.push(row['Name']);
-        });
+        // If we have data
+        if (rows.length > 0) {
+            // Iterate through the array of rows
+            // and push the clean data from your spreadsheet
+            rows.forEach(row => {
+                data.push(row['Name']);
+            });
+        } else {
+            return false;
+        }
+
+        console.log(data);
+
+        // Return the data JSON encoded
+        return JSON.stringify(data);
+    } catch(err) {
+        console.log(err);
+        return false;
     }
-    
-    console.log(data);
-
-    // Return the data JSON encoded
-    return JSON.stringify(data);
 }
 ```
 
-This should log out all of the data in the 'Name' column of your spreadsheet.
+This should log out all of the data in the **Name** column of your spreadsheet.
 
 ### Clean up data
 
@@ -175,14 +192,21 @@ We're going to need to make a few minor modifications to the script to make it c
 
 ```js
 exports.handler = async (event) => {
-
     const data = await getData();
     
-    const response = {
+    let response = {
         "statusCode": 200,
         "body": data,
         "isBase64Encoded": false
     };
+
+    if (!data) {
+        response = {
+            "statusCode": 400,
+            "body": 'Something went wrong',
+            "isBase64Encoded": false
+        };
+    }
 
     return response;
 }
@@ -201,3 +225,5 @@ You now should have a URL we can run GET requests on.
 ## Wrapping up
 
 Now that we have our Lambda synced up to API gateway we're ready to start making requests to it on the front-end of the site.
+
+Find the git repository with this sample code [here](https://github.com/chrisboakes/google-sheets-lambda).
