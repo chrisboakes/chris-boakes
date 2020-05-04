@@ -2,7 +2,7 @@
 layout: post
 title:  "Getting started with Sapper and Svelte"
 description: "Tutorial on creating a statically generated TODO list using Sapper and Svelte"
-date:   2020-06-04 08:00:00
+date:   2020-06-03 08:00:00
 categories: ['javascript', 'sapper', 'svelte', 'performance']
 excerpt: "A friend of mine recently introduced me to Svelte and the approach impressed me. Instead of doing a lot of work in the browser inside a virtual DOM (like a lot of frameworks), Svelte is a compiler step, meaning the code is compiled to efficient vanilla JavaScript when the project is built. It results in a considerably lighter load whilst also being able to leverage useful functionality such as reactivity which might be why you're choosing to use a framework in the first place. Combine this with sapper and you can get a lightweight, statically generated application out of the box."
 ---
