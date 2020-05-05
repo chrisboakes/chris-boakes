@@ -32,7 +32,7 @@ For my application, I wanted to either server or statically render it. I initial
 
 *Source: [https://sapper.svelte.dev/docs#What_is_Sapper](https://sapper.svelte.dev/docs#What_is_Sapper)*
 
-It also takes care of code-splitting, has a pre-configured service-worker and supports client-side hydration. You don't need to mess around with configuring it, everything you needs runs out of the box. 
+It also takes care of code-splitting, has a pre-configured service-worker and supports client-side hydration. You don't need to mess around with configuring it, everything you need runs out of the box. 
 
 ## Getting started
 
@@ -47,7 +47,7 @@ cd sapper-demo
 npm install # or yarn install
 ```
 
-Open the directory in your IDE of choice and you'll see we have some basically tooling and scaffolding for our application: 
+Open the directory in your IDE of choice and you'll see we have some basic tooling and scaffolding for our application: 
 
 - `cypress` - [cypress](https://www.cypress.io/) end-to-end tests
 - `src` - our working directory
