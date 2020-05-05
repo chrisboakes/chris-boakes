@@ -2,30 +2,30 @@
 layout: post
 title:  "Getting started with Sapper and Svelte"
 description: "Tutorial on creating a statically generated TODO list using Sapper and Svelte"
-date:   2020-06-03 08:00:00
-categories: ['javascript', 'sapper', 'svelte', 'performance']
+date:   2020-05-05 08:00:00
+categories: ['sapper', 'svelte', 'performance', 'javascript']
 excerpt: "A friend of mine recently introduced me to Svelte and the approach impressed me. Instead of doing a lot of work in the browser inside a virtual DOM (like a lot of frameworks), Svelte is a compiler step, meaning the code is compiled to efficient vanilla JavaScript when the project is built. It results in a considerably lighter load whilst also being able to leverage useful functionality such as reactivity which might be why you're choosing to use a framework in the first place. Combine this with sapper and you can get a lightweight, statically generated application out of the box."
 ---
+
+## Introduction
 
 *All of the code from this tutorial can be found [here](https://github.com/chrisboakes/sapper-svelte-demo)*
 
 *You can see the statically rendered version running of what we'll build running [here](https://sapper-svelte-todo.netlify.app/)*
 
-## Introduction
-
-One of the biggest issues with developing JavaScript with a framework is the [performance tax](https://timkadlec.com/remembers/2020-04-21-the-cost-of-javascript-frameworks/). A simple application can leverage only a small proportion of the frameworks functionality but the entire framework is downloaded, parsed and executed on user's devices making it difficult to keep the application performant and lightweight. There is absolutely a time and a place for frameworks such as React and Vue but some consideration needs to be given as to when using them is appropriate.
+One of the biggest issues with developing JavaScript with a framework is the [performance tax](https://timkadlec.com/remembers/2020-04-21-the-cost-of-javascript-frameworks/). A simple application can leverage only a small proportion of the frameworks functionality but the entire framework is downloaded, parsed and executed on user's devices making it difficult to keep the application performant and lightweight. There is absolutely a time and a place for frameworks such as React and Vue but consideration needs to be given as to when using them is appropriate.
 
 ### Svelte
 
 A [friend of mine](https://twitter.com/digitalclubb) recently introduced me to [Svelte](https://svelte.dev/) and the approach impressed me. Instead of doing a lot of work in the browser inside a [virtual DOM](https://svelte.dev/blog/virtual-dom-is-pure-overhead), Svelte is a compiler step, meaning the code is compiled to efficient vanilla JavaScript when the project is built. It results in a considerably lighter load whilst also being able to leverage useful functionality such as [reactivity](https://svelte.dev/tutorial/reactive-declarations) which *might* be why you're choosing to use a framework in the first place.
 
-I used it for the first time to build a basic application to list and filter all of the companies in my hometown of Brighton offering delivery during the lockdown. You can find the code for that [here](https://github.com/chrisboakes/brighton-quarantine-delivery).
+I used it for the first time to build a basic application to list and filter all of the companies in my hometown of Brighton offering delivery during the lockdown. You can see that project [here](https://www.brightonquarantine.co.uk/) and can find the code [here](https://github.com/chrisboakes/brighton-quarantine-delivery).
 
-![Brighton Quarantine Delivery](/assets/img/blog/brighton-quarantine-delivery.jpg)
+![Brighton Quarantine Delivery](/assets/img/blog/sapper-svelte-brighton-quarantine-delivery.jpg)
 
 ### Sapper
 
-For my application, I wanted to either server-side or statically render it. I initially opted for server-side rendering because I was using a Google Sheet as a database and wanted the data to always be up-to-date. I later migrated to statically rendering it and hooked it up to [Netlify](https://www.netlify.com/) as I was only updating the spreadsheet a couple of times a week and this would be a much more performant approach for users who were predominantly consuimg the site on mobile devices. To do both of these I used [Sapper](https://sapper.svelte.dev/). The concept is simple:
+For my application, I wanted to either server or statically render it. I initially opted for server rendering because I was using a [Google Sheet as a database](/building-a-rest-api-with-google-sheets-and-aws-lambda/) and wanted the data to be up-to-date. I later migrated to statically rendering and hooked it up to [Netlify](https://www.netlify.com/) as I was only updating the spreadsheet a couple of times a week and this would be a much more performant approach for users who were predominantly consuming the site on mobile devices. For both of these approaches I used [Sapper](https://sapper.svelte.dev/). The concept is simple:
 
 - Each page of your app is a component
 - You create pages by adding files to the `src/routes` directory of your project. These will be server-rendered so that a user's first visit to your app is as fast as possible, then a client-side app takes over
@@ -58,10 +58,10 @@ If we have a look inside the `package.json` file, we have a bunch of pre-configu
 - `dev` - local development and watchers
 - `build` - compile for server rendering
 - `export` - statically rendered build
-- `start` - start the local server
+- `start` - local server
 - `test` - cypress tests
 
-From the root of directory, run:
+From the root directory, run:
 
 ```sh
 npm run dev
@@ -73,7 +73,7 @@ Visit [http://localhost:3000/](http://localhost:3000/) and you should see a nice
 
 ## Clean-up
 
-There's a lot of stuff here we don't need right now. Let's start with the `static` directory: remove the borat image, replace the icons and make the manifest file meaningful. Open `global.css` and add some resets for our lists:
+There's a lot of stuff here we don't need. Let's start with the `static` directory: remove the borat image, replace the icons and make the manifest file meaningful. Open `global.css` and add some resets for our lists:
 
 ```css
 ul {
@@ -103,7 +103,7 @@ Let's start with the script tag. We're going to pass a property to this file cal
 </script>
 ```
 
-Now let's add some basic markup for a logo and navigation:
+Add some basic markup for a logo and navigation:
 
 ```html
 <div>
@@ -125,7 +125,7 @@ Now let's add some basic markup for a logo and navigation:
 
 Now use the `segment` variable we added earlier to dictate whether we're on the current page:
 
-```
+```html
 <li>
     <a href="." class='{ segment === undefined ? 'current' : '' }'>
         Listings
@@ -138,11 +138,11 @@ Now use the `segment` variable we added earlier to dictate whether we're on the 
 </li>
 ```
 
-Here, we're checking the value of `segment` and are adding the `current` class if it matches the route.
+Here we're checking the value of `segment` and are adding the `current` class if it matches the route.
 
 ### Styling
 
-Component styling by default is [scoped to the component](https://svelte.dev/tutorial/styling) so we don't need to worry about the styling defined here affecting anything else on the page. After the script tag and above the markup add some basic styling:
+Styling declared in the component is by default [scoped to the component](https://svelte.dev/tutorial/styling) so we don't need to worry about the styling defined here affecting anything else on the page. After the script tag and above the markup add some basic styling:
 
 ```html
 <style>
@@ -186,21 +186,24 @@ Your page should now look something like this:
 
 ![Sapper and Svelte Navigation](/assets/img/blog/sapper-svelte-navigation.jpg)
 
-## Routing
+### Aside: Routing
 
-Routing in Sapper is simple, just ensure you either have a svelte file or directory inside `routes`:
+*Note: Routing in Sapper is simple, just ensure you either have a svelte file or directory inside `routes`. As an example:*
 
-```
+```js
 // Outputs /articles
-articles.svelte
+routes/articles.svelte
 
 // Outputs /posts
-posts/index.svelte
+routes/posts/index.svelte
+
+// Dynamic route - outputs /posts/foo
+routes/posts/_slug.svelte
 ```
 
-# Listings
+## Listings
 
-We'll leave the About page as it is and focus on pulling in some data from an API and adding some basic filtering client-side.
+We'll leave the About page as it is and focus on fetching some data from an API. We'll then add some basic filtering client-side.
 
 Create a three new components in the component directory:
 
@@ -208,7 +211,7 @@ Create a three new components in the component directory:
 - `Card.svelte`
 - `Filters.svelte`
 
-Open `index.svelte`, import our listings, and declare a data variable (we'll use this later):
+Open `index.svelte`, import our listings and declare a data variable (we'll use this later):
 
 ```html
 <script>
@@ -220,7 +223,7 @@ Open `index.svelte`, import our listings, and declare a data variable (we'll use
 <Listings />
 ```
 
-## Getting the data
+### Getting the data
 
 We're going to fetch the data in `index.svelte` and pass it through to the components.
 
@@ -234,7 +237,7 @@ Firstly, let's add a `context="module"` script tag which means the code will exe
 </script>
 ```
 
-Inside the method, we can make the call to fetch our data and bind it to the `data` variable we declared earlier:
+Inside the method, make the call to fetch our data and bind it to the `data` variable we declared earlier:
 
 ```js
 const response = await this.fetch('https://jsonplaceholder.typicode.com/todos');
@@ -245,13 +248,13 @@ return {
 }
 ```
 
-And now let's pass this data to our listings component:
+Now pass this data to our listings component:
 
 ```html
 <Listings todos={ data } />
 ```
 
-## Outputting the data
+### Outputting the data
 
 Now that we have our list of TODOs, let's output them inside our listings component. Inside `Listings.svelte` declare the variable we passed in:
 
@@ -275,11 +278,11 @@ You should now see a list of the TODO titles:
 
 ![Sapper and Svelte Basic List](/assets/img/blog/sapper-svelte-basic-list.jpg)
 
-## Making our card
+### Making our card
 
-We could of course add our markup and styling here but the component could become easily bloated so we can break it out into smaller components.
+We could of course add our markup and styling here but the component could become easily bloated so let's break it out into smaller components.
 
-Seeing as this is a list of todos, let's make it look like one. Import your `Card.svelte` component to the `Listings.svelte` and pass through the todo data, like this:
+Seeing as this is a list of todos, let's make it look like one. Import your `Card.svelte` component to the `Listings.svelte` and pass through the todo data like this:
 
 ```html
 <script>
@@ -314,7 +317,7 @@ Now in `Card.svelte` declare the data variable and structure some markup:
 </li>
 ```
 
-Let's add some basic styling to make it look a little neater:
+Add some basic styling to make it look a little neater:
 
 ```html
 <style>
@@ -383,11 +386,11 @@ Open up `Filters.svelte` and add some basic markup and styling:
 </div>
 ```
 
-## Filter functionality
+### Filter functionality
 
 We have our filter looking visually ready but it doesn't actually do anything.
 
-The first thing to do is to pass the value of the filter component back up to the listings component where we can start to filter the data (and it will flow down to the components). Add our default value for the select box and create an `updateFilter` method with a simple [dispatcher](https://svelte.dev/tutorial/component-events):
+The first thing to do is pass the value of the filter component back up to the listings component where we can start to filter the data (it will flow down to the components). Add our default value for the select box and create an `updateFilter` method with a simple [dispatcher](https://svelte.dev/tutorial/component-events):
 
 ```html
 <script>
@@ -409,7 +412,7 @@ Now bind the default value and events to the `select` box:
 <select bind:value={ selected } on:change={ updateFilter }>
 ```
 
-Great, we've dispatched our event, we're now ready to catch it in the parent `Listings.svelte` component. Alter the filter component to catch change and set which method we're going to call:
+Great, we've dispatched our event, we're now ready to catch it in the parent `Listings.svelte` component. Alter the filter component to catch any change to the select box and set which method we're going to call:
 
 ```html
 <Filters on:updatefilter={ filterValue } />
@@ -456,7 +459,7 @@ function filterData(event) {
 
 You should now see your list of data filtering. That was pretty easy!
 
-# Rendering
+## Rendering
 
 Now we have a basic application, we're ready to statically render it. As I said before, Sapper will do all of this heavy lifting for us so all we need to do it run:
 
@@ -464,9 +467,9 @@ Now we have a basic application, we're ready to statically render it. As I said 
 npm run export
 ```
 
-Now if you look inside `__sapper__`, you'll see a directory called `export` and this contains all of our statically generated code.
+If you look inside `__sapper__`, you'll see a directory called `export` - this contains all of our statically generated code.
 
-If you wanted to server-side render the application, you could do so by simply running:
+If you wanted to server render the application, you could do so by simply running:
 
 ```sh
 npm run build
@@ -474,7 +477,7 @@ npm run build
 
 If you look inside `__sapper__` you'll see a `build` directory, this is the code we can use to run our project server-side.
 
-# Wrapping up
+## Wrapping up
 
 I've only touched the surface of what you can achieve with Svelte and Sapper but hopefully it gives you an insight as to how easy it is to build a basic application.
 
