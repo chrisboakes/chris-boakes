@@ -142,7 +142,7 @@ Here we're checking the value of `segment` and are adding the `current` class if
 
 ### Styling
 
-Styling declared in the component is by default [scoped to the component](https://svelte.dev/tutorial/styling) so we don't need to worry about the styling defined here affecting anything else on the page. After the script tag and above the markup add some basic styling:
+Styling declared in the component is by default [scoped to the component](https://svelte.dev/tutorial/styling) so we don't need to worry about the styling defined here affecting anything else on the page. Below the markup add some basic styling:
 
 ```html
 <style>
@@ -365,6 +365,15 @@ Above the `<ul>`, call the component:
 Open up `Filters.svelte` and add some basic markup and styling:
 
 ```html
+<div>
+	<label for="filter">Filter:</label>
+    <select id="filter">
+        <option value="all">All</option>
+        <option value="incomplete">Incomplete</option>
+        <option value="complete">Complete</option>
+    </select>
+</div>
+
 <style>
 	label {
 		font-size: .8rem;
@@ -380,15 +389,6 @@ Open up `Filters.svelte` and add some basic markup and styling:
         width: 100%;
     }
 </style>
-
-<div>
-	<label for="filter">Filter:</label>
-    <select id="filter">
-        <option value="all">All</option>
-        <option value="incomplete">Incomplete</option>
-        <option value="complete">Complete</option>
-    </select>
-</div>
 ```
 
 ### Filter functionality
