@@ -114,7 +114,7 @@ Add some basic markup for a logo and navigation:
 
 	<nav>
 		<ul>
-			<li><a href=".">Listings</a></li>
+			<li><a href="/">Listings</a></li>
 			<li><a href="about">About</a></li>
 		</ul>
 	</nav>
@@ -127,7 +127,7 @@ Now use the `segment` variable we added earlier to dictate whether we're on the 
 
 ```html
 <li>
-    <a href="." class='{ segment === undefined ? 'current' : '' }'>
+    <a href="/" class='{ segment === undefined ? 'current' : '' }'>
         Listings
     </a>
 </li>
