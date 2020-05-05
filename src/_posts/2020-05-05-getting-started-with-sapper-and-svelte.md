@@ -95,7 +95,7 @@ Open `index.svelte` and delete all of the markup, JS and CSS but leave the file.
 
 Open `components/Nav.svelte` and remove everything in the file (we'll add it back bit by bit).
 
-Let's start with the script tag. We're going to pass a property to this file called `segment`, which will be the route of the page we're on, we can use this for highlighting which page the user is currently visiting:
+Let's start with the script tag. We're going to pass a property to this file called [segment](https://sapper.svelte.dev/docs/#Nested_routes), which will be the route of the page we're on, we can use this for highlighting which page the user is currently visiting:
 
 ```html
 <script>
@@ -123,7 +123,7 @@ Add some basic markup for a logo and navigation:
 
 ### Navigation Highlighting
 
-Now use the `segment` variable we added earlier to dictate whether we're on the current page:
+Now use the [segment](https://sapper.svelte.dev/docs/#Nested_routes) variable we added earlier to dictate whether we're on the current page:
 
 ```html
 <li>
