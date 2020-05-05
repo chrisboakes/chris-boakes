@@ -338,7 +338,7 @@ Add some basic styling to make it look a little neater:
     }
 
     .completed {
-        color: #aaa;
+        color: #666;
         text-decoration: line-through;
     }
 </style>
@@ -366,6 +366,10 @@ Open up `Filters.svelte` and add some basic markup and styling:
 
 ```html
 <style>
+	label {
+		font-size: .8rem;
+	}
+
     div {
         padding-bottom: 1.5rem;
         margin: 0 auto;
@@ -378,7 +382,8 @@ Open up `Filters.svelte` and add some basic markup and styling:
 </style>
 
 <div>
-    <select>
+	<label for="filter">Filter:</label>
+    <select id="filter">
         <option value="all">All</option>
         <option value="incomplete">Incomplete</option>
         <option value="complete">Complete</option>
@@ -409,7 +414,7 @@ The first thing to do is pass the value of the filter component back up to the l
 Now bind the default value and events to the `select` box:
 
 ```html
-<select bind:value={ selected } on:change={ updateFilter }>
+<select id="filter" bind:value={ selected } on:change={ updateFilter }>
 ```
 
 Great, we've dispatched our event, we're now ready to catch it in the parent `Listings.svelte` component. Alter the filter component to catch any change to the select box and set which method we're going to call:
