@@ -9,7 +9,7 @@ excerpt: "A friend of mine recently introduced me to Svelte and the approach imp
 
 ## Introduction
 
-*All of the code from this tutorial can be found [here](https://github.com/chrisboakes/sapper-svelte-demo)*
+*All of the code from this tutorial can be found [here](https://github.com/chrisboakes/sapper-svelte-todo-application)*
 
 *You can see the statically rendered version running of what we'll build running [here](https://sapper-svelte-todo.netlify.app/)*
 
@@ -477,10 +477,20 @@ npm run build
 
 If you look inside `__sapper__` you'll see a `build` directory, this is the code we can use to run our project server-side.
 
+## Statically deploying to Netlify
+
+If you'd like to host your static build on Netlify, it's extremely simple:
+
+- Log in to your [Netlify](https://www.netlify.com/) account
+- Create a new site from Git and select your repository
+- Select your branch
+- Set the build command as `npm run export`
+- Set the publish directory as `__sapper__/export`
+
 ## Wrapping up
 
-I've only touched the surface of what you can achieve with Svelte and Sapper but hopefully it gives you an insight as to how easy it is to build a basic application.
+I've only touched the surface of what you can achieve with Svelte and Sapper but hopefully it gives you an insight as to how easy it is to build a basic application. I've found the developer experience working with Sapper and Svelte excellent - it's intuitive to write and does a lot of the heavy lifting for you.
 
-All of the code from this tutorial can be found [here](https://github.com/chrisboakes/sapper-svelte-demo).
+All of the code from this tutorial can be found [here](https://github.com/chrisboakes/sapper-svelte-todo-application).
 
 You can see the statically rendered version running [here](https://sapper-svelte-todo.netlify.app/).
