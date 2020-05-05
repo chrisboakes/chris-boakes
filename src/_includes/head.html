@@ -14,6 +14,35 @@
     <meta name="theme-color" content="#333">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+	{% if page.title %}
+		<meta property="og:title" content="{{ page.title | escape }}">
+	{% endif %}
+	{% if page.description %}
+		<meta property="og:description" content="{{ page.description | escape }}">
+	{% endif %}
+	{% if page.url %}
+		<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+	{% endif %}
+	{% if page.image %}
+		<meta property="og:image" content="{{ site.url }}/assets/img/blog/{{ page.image }}">
+	{% endif %}
+	<meta property="og:site_name" content="Chris Boakes">
+	
+	<meta content="summary" name=twitter:card>
+	{% if page.title %}
+		<meta name="twitter:title" content="{{ page.title | escape }}">
+	{% endif %}
+	{% if page.description %}
+		<meta name="twitter:description" content="{{ page.description | escape }}">
+	{% endif %}
+	{% if page.image %}
+		<meta name="twitter:image:src" content="{{ site.url }}/assets/img/blog/{{ page.image }}">
+		<meta name="twitter:image:alt" content="Chris Boakes Blog Image">
+	{% endif %}
+	<meta name="twitter:domain" content="chrisboakes.com">
+
+	<base href="/">
+
     <link href="https://fonts.googleapis.com/css?family=Lato:700|Merriweather:300,700" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/prism.css" />
     <link rel="stylesheet" href="/assets/build/style.css?v=1.0" />
