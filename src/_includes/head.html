@@ -21,10 +21,10 @@
 		<meta property="og:description" content="{{ page.description | escape }}">
 	{% endif %}
 	{% if page.url %}
-		<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+		<meta property="og:url" content="https://chrisboakes.com{{ page.url }}">
 	{% endif %}
 	{% if page.image %}
-		<meta property="og:image" content="{{ site.url }}/assets/img/blog/{{ page.image }}">
+		<meta property="og:image" content="https://chrisboakes.com/assets/img/blog/{{ page.image }}">
 	{% endif %}
 	<meta property="og:site_name" content="Chris Boakes">
 	
@@ -36,7 +36,7 @@
 		<meta name="twitter:description" content="{{ page.description | escape }}">
 	{% endif %}
 	{% if page.image %}
-		<meta name="twitter:image:src" content="{{ site.url }}/assets/img/blog/{{ page.image }}">
+		<meta name="twitter:image:src" content="https://chrisboakes.com/assets/img/blog/{{ page.image }}">
 		<meta name="twitter:image:alt" content="Chris Boakes Blog Image">
 	{% endif %}
 	<meta name="twitter:domain" content="chrisboakes.com">
