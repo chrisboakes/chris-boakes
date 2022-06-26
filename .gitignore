@@ -12,3 +12,4 @@ __MACOSX/
 *.zip
 /src/assets/build/*
 !/public/.gitkeep
+.jekyll-cache

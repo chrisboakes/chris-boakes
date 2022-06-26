@@ -43,7 +43,7 @@ It's common practice to use either a debounce or throttle to limit the amount of
 If we were to apply our debounce method to the above scroll listener, it would look like this:
 
 ```js
-window.addEventListener('scroll', throttle(() => {
+window.addEventListener('scroll', debounce(() => {
 	// Check how far the user has scrolled
 }, 500));
 ```
