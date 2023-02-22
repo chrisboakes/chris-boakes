@@ -34,7 +34,7 @@ I won't go into how to create an error boundary component here since there's a g
 
 One challenge I faced was testing the component that throws the error in the first place.
 
-## Testing a thrown error on initial render
+## Testing a thrown error on render
 
 We can test an error that's thrown during the initial render:
 
