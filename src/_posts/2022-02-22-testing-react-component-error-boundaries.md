@@ -14,7 +14,7 @@ I've been working with [error boundaries](https://reactjs.org/docs/error-boundar
 
 You might structure your code to look like this:
 
-```js
+```jsx
 <main>
     <Header />
 
@@ -38,7 +38,7 @@ One challenge I faced was testing the component that throws the error in the fir
 
 We can test an error that's thrown during the initial render:
 
-```js
+```jsx
 const Foo: FC = () => {
 	throw new Error('Oh no');
 };
@@ -46,7 +46,7 @@ const Foo: FC = () => {
 
 Like so:
 
-```js
+```jsx
 test('component should throw', () => {
     expect(() => render(<Foo />)).toThrow();
 });
@@ -60,7 +60,7 @@ Error: Uncaught [Error: Oh no]
 
 So we need to `spyOn` the console error:
 
-```js
+```jsx
 test('component should throw', () => {
     vi.spyOn(console, 'error').mockImplementation(() => null);
 
@@ -74,14 +74,13 @@ Our test should then pass.
 
 If your component throws an error asynchronously, our approach will differ. For example:
 
-```js
+```jsx
 const Foo: FC = () => {
 	try {
         await fetch('foo-endpoint');
     } catch (error) {
         throw new Error(error.message);
     }
-
 };
 ```
 
@@ -93,7 +92,7 @@ AssertionError: expected [Function] to throw an error
 
 This is because the error happens after the initial render. In a browser, this will be caught by our error boundary so that's how we can test it:
 
-```js
+```jsx
 test('async component should throw', async () => {
     vi.spyOn(console, 'error').mockImplementation(() => null);
 
