@@ -10,7 +10,7 @@ excerpt: "When writing tests with React Testing Library, developers often run in
 
 When writing tests with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/), developers often run into the following warning:
 
-```
+```sh
 Warning: An update to *** inside a test was not wrapped in act(...).
 
 When testing, code that causes React state updates should be wrapped into act(...):
@@ -99,13 +99,13 @@ While wrapping your assertion or action in a wait might make the warning go away
 
 In our codebase, we noticed a lot of act warnings suddenly appear even though we were asserting like above. Simply upgrading from:
 
-```
+```sh
 "@testing-library/react": "13.4.0"
 ```
 
 To:
 
-```
+```sh
 "@testing-library/react": "14.0.0"
 ```
 
